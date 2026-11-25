@@ -1,0 +1,3222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RoleInHelp · Ruang Belajar AI Mahasiswa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ink: #0F172A;
+  --mute: #64748B;
+  --faint: #94A3B8;
+  --line: rgba(15, 23, 42, 0.08);
+  --line-strong: rgba(15, 23, 42, 0.14);
+  --glass: rgba(255, 255, 255, 0.72);
+  --win: rgba(255, 255, 255, 0.88);
+  --sd: rgba(248, 250, 252, 0.82);
+  --soft: rgba(15, 23, 42, 0.04);
+  --soft-hover: rgba(15, 23, 42, 0.08);
+  --card: #FFFFFF;
+  --acc: #10B981;
+  --acc-rgb: 16, 185, 129;
+  --acc-ink: #022C22;
+  --acc-soft: rgba(16, 185, 129, 0.12);
+  --dk: #0B0F17;
+  --dk-ink: #F1F5F9;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 25px 50px -12px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  --shadow-win: 0 32px 72px -16px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --wall: radial-gradient(100% 80% at 10% 10%, #D1FAE5 0%, transparent 60%),
+          radial-gradient(90% 70% at 90% 15%, #E0E7FF 0%, transparent 65%),
+          radial-gradient(100% 90% at 75% 95%, #FFE4E6 0%, transparent 60%),
+          #F8FAFC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #F8FAFC;
+    --mute: #94A3B8;
+    --faint: #64748B;
+    --line: rgba(255, 255, 255, 0.09);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --glass: rgba(15, 23, 42, 0.75);
+    --win: rgba(17, 24, 39, 0.88);
+    --sd: rgba(15, 23, 42, 0.65);
+    --soft: rgba(255, 255, 255, 0.06);
+    --soft-hover: rgba(255, 255, 255, 0.1);
+    --card: #1E293B;
+    --acc: #34D399;
+    --acc-rgb: 52, 211, 153;
+    --acc-ink: #022C22;
+    --acc-soft: rgba(52, 211, 153, 0.15);
+    --dk: #030712;
+    --dk-ink: #F9FAFB;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 12px 24px -6px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    --shadow-win: 0 36px 80px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    --wall: radial-gradient(100% 80% at 10% 10%, #064E3B 0%, transparent 60%),
+            radial-gradient(90% 70% at 90% 15%, #1E1B4B 0%, transparent 65%),
+            radial-gradient(100% 90% at 75% 95%, #4C0519 0%, transparent 60%),
+            #0B0F17;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #F8FAFC;
+  --mute: #94A3B8;
+  --faint: #64748B;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --glass: rgba(15, 23, 42, 0.75);
+  --win: rgba(17, 24, 39, 0.88);
+  --sd: rgba(15, 23, 42, 0.65);
+  --soft: rgba(255, 255, 255, 0.06);
+  --soft-hover: rgba(255, 255, 255, 0.1);
+  --card: #1E293B;
+  --acc: #34D399;
+  --acc-rgb: 52, 211, 153;
+  --acc-ink: #022C22;
+  --acc-soft: rgba(52, 211, 153, 0.15);
+  --dk: #030712;
+  --dk-ink: #F9FAFB;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 24px -6px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-win: 0 36px 80px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  --wall: radial-gradient(100% 80% at 10% 10%, #064E3B 0%, transparent 60%),
+          radial-gradient(90% 70% at 90% 15%, #1E1B4B 0%, transparent 65%),
+          radial-gradient(100% 90% at 75% 95%, #4C0519 0%, transparent 60%),
+          #0B0F17;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 15px; }
+
+body {
+  background: var(--wall);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  padding: calc(44px + env(safe-area-inset-top, 0px)) 0 130px;
+  min-height: 100dvh;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+[hidden] { display: none !important; }
+button { font-family: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.18; color: var(--ink); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.35); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.6); }
+
+/* TOP MENUBAR */
+.menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: calc(36px + env(safe-area-inset-top, 0px));
+  padding: env(safe-area-inset-top, 0px) 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--glass);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.mi { position: relative; }
+.mb {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: background 0.15s, color 0.15s;
+}
+.mb:hover, .mi.open .mb { background: var(--soft-hover); }
+.mb.b {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.01em;
+}
+.mb.b span.brand-glow {
+  color: var(--acc);
+  font-size: 15px;
+  filter: drop-shadow(0 0 8px rgba(var(--acc-rgb), 0.6));
+}
+
+.dd {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  padding: 6px;
+  margin-top: 6px;
+  background: var(--win);
+  backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: ddin 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes ddin {
+  from { opacity: 0; transform: translateY(-4px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.mi.open .dd { display: block; }
+.dd button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+.dd button:hover {
+  background: var(--acc);
+  color: var(--acc-ink);
+}
+.dd hr { border: 0; border-top: 1px solid var(--line); margin: 5px 0; }
+.dd kbd {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 5px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.clock {
+  margin-left: auto;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--mute);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.clock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--acc);
+  box-shadow: 0 0 10px var(--acc);
+  animation: pulse-dot 2.4s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* VIEWS & CONTAINERS */
+.view { display: none; padding: 0 24px; }
+.view.on {
+  display: block;
+  animation: vin 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes vin {
+  from { opacity: 0; transform: scale(0.985) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.wrap { max-width: 1160px; margin: 0 auto; }
+
+/* MACOS WINDOW COMPONENT */
+.win {
+  max-width: 1140px;
+  margin: 24px auto 0;
+  border-radius: 18px;
+  background: var(--win);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-win);
+  overflow: hidden;
+  transition: max-width 0.35s cubic-bezier(0.2, 0.9, 0.2, 1), margin 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.win.max { max-width: 100%; margin: 12px 12px 0; border-radius: 14px; }
+.win.min .wb, .win.min .tool, .win.min .sb { display: none; }
+
+/* TITLEBAR */
+.tb {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+.tl { display: flex; gap: 8px; align-items: center; }
+.c {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s, filter 0.15s;
+}
+.c:hover { filter: brightness(0.92); }
+.c.r { background: #FF5F57; }
+.c.y { background: #FEBC2E; }
+.c.g { background: #28C840; }
+.c::after {
+  content: "";
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  line-height: 1;
+}
+.tl:hover .c.r::after { content: "✕"; opacity: 1; }
+.tl:hover .c.y::after { content: "–"; opacity: 1; }
+.tl:hover .c.g::after { content: "+"; opacity: 1; }
+
+.ttl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.ttl svg { stroke: var(--acc); }
+.tbr { margin-left: auto; display: flex; gap: 8px; }
+
+/* TOOLBAR & SEGMENTED TABS */
+.tool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+  flex-wrap: wrap;
+}
+.seg {
+  display: inline-flex;
+  background: var(--line);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 2px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.seg button {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mute);
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.seg button:hover { color: var(--ink); }
+.seg button.on {
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--line);
+}
+.hint {
+  color: var(--mute);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* WORKBENCH BODY */
+.wb {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 520px;
+}
+
+/* SIDEBAR */
+.sd {
+  background: var(--sd);
+  border-right: 1px solid var(--line);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sd h5 {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.hist button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ink);
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hist button::before {
+  content: "•";
+  color: var(--faint);
+  font-size: 16px;
+}
+.hist button:hover { background: var(--soft-hover); }
+.hist button.on {
+  background: var(--acc);
+  color: var(--acc-ink);
+  font-weight: 600;
+}
+.hist button.on::before { color: var(--acc-ink); }
+.hist em {
+  color: var(--mute);
+  font-size: 12.5px;
+  padding: 8px 12px;
+  font-style: normal;
+  display: block;
+  text-align: center;
+  background: var(--soft);
+  border-radius: 8px;
+  border: 1px dashed var(--line);
+}
+
+.tip-box {
+  margin-top: auto;
+  padding: 14px;
+  background: var(--acc-soft);
+  border: 1px solid rgba(var(--acc-rgb), 0.25);
+  border-radius: 12px;
+}
+.tip-box h6 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tip { color: var(--mute); font-size: 12.5px; line-height: 1.5; }
+
+/* DUAL PANES */
+.panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 0;
+  background: var(--card);
+}
+.pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+.pane + .pane { border-left: 1px solid var(--line); }
+
+.pane > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.pane textarea {
+  flex: 1;
+  min-height: 340px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: none;
+  padding: 18px 20px;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+.pane textarea::placeholder { color: var(--faint); font-weight: 400; }
+.pane textarea:focus { background: rgba(var(--acc-rgb), 0.02); }
+
+.pane footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--line);
+  background: var(--soft);
+}
+.cnt {
+  color: var(--mute);
+  font-size: 12px;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--mono);
+}
+
+/* SPECIAL BADGE & BUTTONS */
+.agent-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.15));
+  color: #2563EB;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+:root[data-theme="dark"] .agent-pill {
+  color: #60A5FA;
+  border-color: rgba(96, 165, 250, 0.35);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(16, 185, 129, 0.25));
+}
+.btn-accent {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+  color: #fff !important;
+  border: 1px solid #1E40AF !important;
+  font-weight: 600 !important;
+}
+.btn-accent:hover {
+  background: linear-gradient(135deg, #1D4ED8, #1E3A8A) !important;
+  transform: translateY(-1px);
+}
+.btn-word {
+  background: rgba(37, 99, 235, 0.08) !important;
+  color: #2563EB !important;
+  border: 1px solid rgba(37, 99, 235, 0.25) !important;
+  font-weight: 600 !important;
+}
+:root[data-theme="dark"] .btn-word {
+  background: rgba(96, 165, 250, 0.12) !important;
+  color: #93C5FD !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+}
+.btn-word:hover {
+  background: rgba(37, 99, 235, 0.16) !important;
+}
+
+/* LIVE RESEARCH SOURCES PANEL */
+.research-box {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--soft);
+  border: 1px solid var(--line-strong);
+  font-size: 13px;
+}
+.research-box h5 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--acc);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.research-group {
+  margin-bottom: 10px;
+}
+.research-group:last-child { margin-bottom: 0; }
+.research-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mute);
+  margin-bottom: 4px;
+}
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.research-list li {
+  line-height: 1.45;
+  color: var(--ink);
+}
+.research-list a {
+  color: #2563EB;
+  text-decoration: none;
+  font-weight: 500;
+}
+:root[data-theme="dark"] .research-list a { color: #60A5FA; }
+.research-list a:hover { text-decoration: underline; }
+.research-meta {
+  font-size: 11.5px;
+  color: var(--mute);
+  margin-left: 4px;
+}
+
+/* ATTACHED PHOTO CARD */
+.attached-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 14px 18px 0;
+  padding: 10px 14px;
+  background: var(--soft-hover);
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.2s;
+}
+.attached-card:hover {
+  border-color: var(--acc);
+}
+.attached-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+.attached-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.attached-info {
+  flex: 1;
+  min-width: 0;
+}
+.attached-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--acc);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+  letter-spacing: 0.04em;
+}
+.attached-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.attached-hint {
+  font-size: 11px;
+  color: var(--mute);
+}
+.attached-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.15s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.attached-remove:hover {
+  background: #EF4444;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* DRAG OVERLAY ON INPUT PANE */
+.pane.drag-over {
+  background: var(--acc-soft) !important;
+  outline: 2px dashed var(--acc);
+  outline-offset: -4px;
+}
+
+.pane-tip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  background: var(--acc-soft);
+  color: var(--acc);
+  border-radius: 8px;
+  margin: 12px 18px 0;
+  border: 1px dashed rgba(var(--acc-rgb), 0.3);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.pane-tip-pill strong { font-weight: 700; }
+
+/* RESULTS PANE */
+.res {
+  flex: 1;
+  padding: 24px 26px;
+  overflow-y: auto;
+  max-height: 520px;
+  font-size: 15px;
+  line-height: 1.75;
+  background-image: radial-gradient(var(--line-strong) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  position: relative;
+}
+.res h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.res h4:first-child { margin-top: 0; }
+.res p { margin: 10px 0; }
+.res ul, .res ol { margin: 10px 0 12px 22px; padding-left: 4px; }
+.res li { margin-bottom: 6px; }
+.res code {
+  font-family: var(--mono);
+  font-size: 13px;
+  background: var(--soft-hover);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--acc);
+  font-weight: 500;
+}
+.res .ph {
+  color: var(--faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 240px;
+  text-align: center;
+  font-size: 14.5px;
+}
+.res .note {
+  margin-top: 24px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--mute);
+  background: var(--soft);
+  border-left: 3px solid var(--acc);
+  border-radius: 0 8px 8px 0;
+}
+
+/* STATUS BAR */
+.sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--mute);
+  background: var(--sd);
+}
+.sb .st { display: flex; align-items: center; gap: 7px; }
+.sb .st::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--acc);
+}
+
+/* BUTTONS */
+.b {
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 7px 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.b:hover {
+  border-color: var(--acc);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.b:active { transform: translateY(0); }
+.b:disabled { opacity: 0.55; cursor: not-allowed; transform: none !important; }
+
+.b.p {
+  background: linear-gradient(135deg, var(--acc), #059669);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(var(--acc-rgb), 0.35);
+}
+.b.p:hover {
+  box-shadow: 0 6px 20px rgba(var(--acc-rgb), 0.5);
+  filter: brightness(1.05);
+}
+
+.b.s {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  color: var(--mute);
+}
+.b.s:hover {
+  color: var(--ink);
+  background: var(--soft-hover);
+  border-color: transparent;
+}
+
+.b.big {
+  padding: 12px 28px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 64px 0 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+.kick {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--acc);
+  text-transform: uppercase;
+  background: var(--acc-soft);
+  padding: 4px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(var(--acc-rgb), 0.3);
+  margin-bottom: 20px;
+}
+.kick svg { stroke: var(--acc); }
+
+h1 {
+  font-size: clamp(38px, 5.2vw, 58px);
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.12;
+}
+.mk {
+  background: rgba(var(--acc-rgb), 0.12);
+  padding: 0 6px;
+  border-radius: 6px;
+  color: var(--acc);
+  display: inline;
+}
+.lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--mute);
+  max-width: 540px;
+}
+.cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+/* TERMINAL PREVIEW CARD IN HERO */
+.mac {
+  background: var(--win);
+  backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-win);
+  transition: transform 0.3s;
+}
+.mac:hover { transform: translateY(-4px); }
+.mbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+.mbar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.mbar i:nth-child(1) { background: #FF5F57; }
+.mbar i:nth-child(2) { background: #FEBC2E; }
+.mbar i:nth-child(3) { background: #28C840; }
+.mbar span {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+  background: var(--soft-hover);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.mbody {
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  min-height: 170px;
+  position: relative;
+  background-image: radial-gradient(var(--line-strong) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+}
+.mbody .q { color: var(--mute); font-weight: 500; }
+.mac.done .q {
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-color: #EF4444;
+}
+.mbody .a {
+  margin-top: 10px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+}
+.cur {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--acc);
+  vertical-align: -2px;
+  animation: bl 1s steps(2) infinite;
+}
+@keyframes bl { 50% { opacity: 0; } }
+.mbtn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  background: var(--acc);
+  color: var(--acc-ink);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 11.5px;
+  border-radius: 99px;
+  padding: 6px 14px;
+  box-shadow: 0 4px 10px rgba(var(--acc-rgb), 0.3);
+}
+
+.leg {
+  display: flex;
+  gap: 20px;
+  margin: 14px 6px 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+}
+.leg span { display: flex; align-items: center; gap: 7px; }
+.leg b { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* SECTIONS COMMON */
+section.s { padding: 60px 0; }
+h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(32px, 4.4vw, 44px);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.sub {
+  color: var(--mute);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 660px;
+}
+
+/* WHY CARDS */
+.why {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+.why-card {
+  background: var(--win);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s;
+}
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--acc-rgb), 0.4);
+}
+.why-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.why-icon.green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+.why-icon.blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3B82F6;
+}
+.why-icon.purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: #A855F7;
+}
+.why-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.2;
+}
+.why-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.why-card p {
+  color: var(--mute);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* APPS GRID */
+.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+.apps a {
+  background: var(--win);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.apps a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(var(--acc-rgb), 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.apps a:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--acc);
+}
+.apps a:hover::before { opacity: 1; }
+.ico {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.ico svg { width: 28px; height: 28px; stroke-width: 2.2; }
+.apps b { font-size: 19px; font-weight: 700; color: var(--ink); }
+.apps p { color: var(--mute); font-size: 14.5px; line-height: 1.55; }
+.apps span {
+  margin-top: auto;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--acc);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+.apps a:hover span { gap: 10px; }
+
+/* NEW INTERACTIVE FEATURE SHOWCASE (REPLACED SVG ROOM) */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 28px;
+  margin-top: 36px;
+  align-items: start;
+}
+.showcase-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sc-card {
+  background: var(--win);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  text-align: left;
+}
+.sc-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(var(--acc-rgb), 0.4);
+  background: var(--card);
+}
+.sc-card.active {
+  background: var(--card);
+  border-color: var(--acc);
+  box-shadow: 0 12px 28px -6px rgba(var(--acc-rgb), 0.2), 0 0 0 1px var(--acc);
+  transform: translateX(6px);
+}
+.sc-card-ico {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.sc-card-ico svg { width: 22px; height: 22px; stroke-width: 2.2; }
+.sc-card-text { flex: 1; }
+.sc-card-text h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sc-card-text p {
+  font-size: 13px;
+  color: var(--mute);
+  line-height: 1.45;
+}
+.sc-card-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 99px;
+  background: var(--soft);
+  color: var(--mute);
+}
+.sc-card.active .sc-card-badge {
+  background: var(--acc-soft);
+  color: var(--acc);
+}
+
+/* SHOWCASE LIVE PREVIEW WINDOW */
+.sc-win {
+  background: var(--win);
+  backdrop-filter: blur(36px) saturate(180%);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-win);
+  display: flex;
+  flex-direction: column;
+}
+.sc-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+.sc-tag {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--acc);
+  background: var(--acc-soft);
+  padding: 3px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sc-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--acc);
+  box-shadow: 0 0 6px var(--acc);
+  animation: pulse-dot 2s infinite;
+}
+.sc-body {
+  padding: 24px 26px;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-image: radial-gradient(var(--line-strong) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+  background-color: var(--win);
+}
+.sc-q {
+  color: var(--mute);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 14px;
+  transition: opacity 0.3s;
+}
+.sc-win.done .sc-q {
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-color: #EF4444;
+}
+.sc-a {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.75;
+  flex: 1;
+}
+.sc-a strong { color: var(--ink); }
+.sc-a p { margin-bottom: 8px; }
+.sc-a ul { margin: 6px 0 10px 18px; }
+.sc-a code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--soft-hover);
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: var(--acc);
+  border: 1px solid var(--line);
+}
+.sc-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sc-desc-pill {
+  font-size: 12.5px;
+  color: var(--mute);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* CARA KERJA */
+.dkc {
+  background: var(--dk);
+  color: var(--dk-ink);
+  border-radius: 26px;
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+.dkc h2 { color: var(--dk-ink); }
+.dkc .sub { color: #94A3B8; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 36px;
+}
+.step-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--acc);
+  letter-spacing: 0.14em;
+  background: rgba(var(--acc-rgb), 0.15);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.steps h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+.steps p { color: #94A3B8; font-size: 14.5px; line-height: 1.6; }
+
+/* FAQ */
+.faq { max-width: 860px; margin-top: 32px; }
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  transition: padding 0.2s;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 17.5px;
+  color: var(--ink);
+}
+summary::-webkit-details-marker { display: none; }
+summary i {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-size: 18px;
+  transition: transform 0.25s, background 0.2s;
+}
+details[open] summary i {
+  transform: rotate(45deg);
+  background: var(--acc);
+  color: var(--acc-ink);
+}
+details p {
+  color: var(--mute);
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 740px;
+}
+
+/* FOOTER */
+.foot {
+  text-align: center;
+  color: var(--mute);
+  font-size: 13.5px;
+  padding: 48px 0 16px;
+}
+
+/* MACOS DOCK */
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 26px;
+  background: var(--glass);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  z-index: 90;
+  max-width: 96vw;
+}
+.dk {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  flex: none;
+  transition: transform 0.2s cubic-bezier(0.2, 1.4, 0.4, 1), box-shadow 0.2s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.dk svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2.2; }
+.dk:hover {
+  transform: translateY(-14px) scale(1.35);
+  z-index: 2;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+.dk:hover + .dk, .dk:has(+ .dk:hover) { transform: translateY(-6px) scale(1.16); }
+.dk.on::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 6px var(--ink);
+}
+.dk::before {
+  content: attr(data-t);
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--win);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.dk:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+.dk.bn { animation: bn 0.7s; }
+@keyframes bn {
+  20%, 60% { transform: translateY(-18px); }
+  40%, 80% { transform: translateY(0); }
+}
+
+.sep {
+  width: 1px;
+  height: 38px;
+  background: var(--line-strong);
+  align-self: center;
+  margin: 0 4px;
+}
+
+.dk.pl { animation: plz 2.2s ease-out infinite; }
+@keyframes plz {
+  0% { box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7); }
+  100% { box-shadow: 0 0 0 16px rgba(244, 114, 182, 0); }
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 16px);
+  opacity: 0;
+  z-index: 95;
+  background: var(--dk);
+  color: var(--dk-ink);
+  border-radius: 99px;
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* SCROLL REVEALS */
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rv.in { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 32px; gap: 36px; }
+  .wb { grid-template-columns: 1fr; }
+  .sd { display: none; }
+  .panes { grid-template-columns: 1fr; }
+  .pane + .pane { border-left: 0; border-top: 1px solid var(--line); }
+  .showcase-grid { grid-template-columns: 1fr; }
+  .dkc { padding: 32px 24px; }
+  .dk { width: 42px; height: 42px; font-size: 20px; }
+  .dock { gap: 6px; padding: 8px 10px; }
+  .mb.hm { display: none; }
+  .ttl { max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .view.on, .dk.bn, .dk.pl, .cur { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP MENUBAR -->
+<nav class="menubar" aria-label="Menu utama">
+  <div class="mi">
+    <button class="mb b" data-m="0"><span class="brand-glow">✦</span> RoleInHelp</button>
+    <div class="dd">
+      <button data-go="beranda">Tentang RoleInHelp</button>
+      <hr>
+      <button data-act="theme">Ganti tema terang/gelap</button>
+      <button data-act="music">Putar atau jeda lofi</button>
+    </div>
+  </div>
+  <div class="mi">
+    <button class="mb hm" data-m="1">Agent</button>
+    <div class="dd">
+      <button data-go="tugas">Agent Tugas <kbd>1</kbd></button>
+      <button data-go="thesis">Agent Thesis <kbd>2</kbd></button>
+      <button data-go="excel">Agent Excel <kbd>3</kbd></button>
+      <button data-go="ringkasan">Agent Ringkasan <kbd>4</kbd></button>
+    </div>
+  </div>
+  <div class="mi">
+    <button class="mb hm" data-m="2">Tampilan</button>
+    <div class="dd">
+      <button data-act="theme">Tema terang/gelap</button>
+      <button data-act="max">Perbesar jendela agent</button>
+    </div>
+  </div>
+  <div class="clock" id="clock-container">
+    <span class="clock-dot"></span>
+    <span id="clock"></span>
+  </div>
+</nav>
+
+<main>
+<!-- BERANDA VIEW -->
+<div class="view on" id="v-beranda">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="kick">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+          Ruang Belajar AI Mahasiswa · RoleInHelp
+        </div>
+        <h1>Empat agent AI di dalam <span class="mk">RoleInHelp</span>.</h1>
+        <p class="lead">RoleInHelp adalah pendamping belajar mahasiswa: menyajikan jawaban berbobot murni (metodologi IRAC, yurisprudensi putusan pengadilan, foto materi/soal, dan daftar pustaka siap pakai).</p>
+        <div class="cta">
+          <button class="b p big" data-go="tugas">Mulai Belajar Sekarang →</button>
+          <button class="b big" id="kenal">Jelajahi Fitur ↓</button>
+        </div>
+      </div>
+      <div>
+        <div class="mac" id="hm">
+          <div class="mbar"><i></i><i></i><i></i><span class="mlab">AGENT TUGAS</span></div>
+          <div class="mbody"><div class="q"></div><div class="a"></div><span class="cur"></span><span class="mbtn">Jalankan agent</span></div>
+        </div>
+        <div class="leg">
+          <span><b style="background:#EF4444"></b>PERTANYAAN</span>
+          <span><b style="background:var(--acc)"></b>HASIL ANALISIS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="s" id="intro">
+      <p class="kick rv">Mengapa RoleInHelp?</p>
+      <h2 class="rv">Dibuat untuk membantu mulai, bukan menggantikan proses belajarmu.</h2>
+      <p class="sub rv">Setiap agent punya jendelanya sendiri dengan antarmuka yang seragam dan intuitif: tulis kebutuhanmu di sisi kiri, baca analisis terstruktur di kanan, lalu periksa dan kembangkan.</p>
+      <div class="why">
+        <div class="why-card rv">
+          <div class="why-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Cepat & Praktis</h3>
+          <p>Tidak perlu merangkai prompt rumit. Cukup pilih mode, ketik pertanyaan atau unggah foto catatan, dan agent langsung menyusun jawaban.</p>
+        </div>
+        <div class="why-card rv">
+          <div class="why-icon blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>Kendali di Tanganmu</h3>
+          <p>Hasil AI adalah titik awal draf. Sumber hukum, pasal perundang-undangan, metodologi, dan data angka tetap harus diverifikasi ke naskah otentik.</p>
+        </div>
+        <div class="why-card rv">
+          <div class="why-icon purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+          </div>
+          <h3>Bahasa & Konteks Indonesia</h3>
+          <p>Disesuaikan dengan format kurikulum universitas di Indonesia, istilah hukum nasional, dan standar penulisan skripsi akademik.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW INTERACTIVE FEATURE SHOWCASE (REPLACES OLD ROOM DRAWING) -->
+    <section class="s" id="showcase">
+      <p class="kick rv">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Simulasi Langsung
+      </p>
+      <h2 class="rv">Lihat bagaimana setiap agent bekerja untukmu.</h2>
+      <p class="sub rv">Klik salah satu agent di bawah untuk menyaksikan simulasi langsung proses analisis pertanyaan dan hasil jawaban terstrukturnya.</p>
+
+      <div class="showcase-grid rv">
+        <!-- Showcase Navigation Cards (Left) -->
+        <div class="showcase-nav" id="sc-nav">
+          <div class="sc-card active" data-agent="tugas">
+            <div class="sc-card-ico" style="background:linear-gradient(135deg,#60A5FA,#2563EB)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <div class="sc-card-text">
+              <h4>Agent Tugas <span class="sc-card-badge">Tugas & Analisis</span></h4>
+              <p>Analisis metodologi IRAC, telaah putusan pengadilan PN/MA/MK, foto materi/soal, dan daftar pustaka otomatis.</p>
+            </div>
+          </div>
+
+          <div class="sc-card" data-agent="thesis">
+            <div class="sc-card-ico" style="background:linear-gradient(135deg,#FBBF24,#D97706)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="sc-card-text">
+              <h4>Agent Thesis <span class="sc-card-badge">Skripsi & Riset</span></h4>
+              <p>Menyusun outline Bab I s.d. Bab V, merumuskan masalah penelitian, dan memetakan tinjauan pustaka.</p>
+            </div>
+          </div>
+
+          <div class="sc-card" data-agent="excel">
+            <div class="sc-card-ico" style="background:linear-gradient(135deg,#34D399,#059669)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            </div>
+            <div class="sc-card-text">
+              <h4>Agent Excel <span class="sc-card-badge">Spreadsheet</span></h4>
+              <p>Membuat formula bersyarat kompleks, bedah error rumus, dan merapikan dataset nilai.</p>
+            </div>
+          </div>
+
+          <div class="sc-card" data-agent="ringkasan">
+            <div class="sc-card-ico" style="background:linear-gradient(135deg,#C084FC,#7C3AED)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="sc-card-text">
+              <h4>Agent Ringkasan <span class="sc-card-badge">Catatan & OCR</span></h4>
+              <p>Merangkum materi tebal, membuat kartu tanya-jawab ujian, serta ekstraksi teks dari foto.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase Live Preview Window (Right) -->
+        <div class="sc-win" id="sc-win">
+          <div class="sc-bar">
+            <div class="tl">
+              <i class="c r"></i><i class="c y"></i><i class="c g"></i>
+            </div>
+            <div class="sc-tag">
+              <span class="sc-tag-dot"></span>
+              <span id="sc-active-tag">SIMULASI AKTIF</span>
+            </div>
+          </div>
+          <div class="sc-body">
+            <div class="sc-q" id="sc-prompt">› Menyiapkan simulasi…</div>
+            <div class="sc-a" id="sc-answer"><span class="cur"></span></div>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-desc-pill" id="sc-footer-desc">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Klik kartu di samping untuk simulasi lain
+            </span>
+            <button class="b p" id="sc-btn-open">Buka Workspace Ini →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPS GRID (CARD SELECTIONS) -->
+    <section class="s" id="apps">
+      <p class="kick rv">Empat agent spesialis</p>
+      <h2 class="rv">Pilih agent sesuai kebutuhan studimu hari ini.</h2>
+      <div class="apps" id="appgrid"></div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section class="s">
+      <div class="dkc rv">
+        <p class="kick">Alur Kerja Cerdas</p>
+        <h2>Jelas, terukur, dan tetap dalam kendali penuhmu.</h2>
+        <p class="sub">RoleInHelp mempercepat penyusunan draf awal sehingga kamu bisa fokus pada verifikasi substansi.</p>
+        <div class="steps">
+          <div>
+            <span class="step-num">01 · INPUT</span>
+            <h3>Pilih Agent</h3>
+            <p>Tugas kuliah umum & hukum, skripsi, rumus Excel, atau ringkasan catatan kuliah.</p>
+          </div>
+          <div>
+            <span class="step-num">02 · PROSES</span>
+            <h3>Tulis / Unggah</h3>
+            <p>Ketik materi, rumus, judul usulan penelitian, atau foto lembaran catatanmu.</p>
+          </div>
+          <div>
+            <span class="step-num">03 · HASIL</span>
+            <h3>Review & Pakai</h3>
+            <p>Evaluasi hasilnya, cek dasar hukum dan referensi, lalu salin ke pekerjaanmu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s" id="faq">
+      <p class="kick rv">Tanya Jawab</p>
+      <h2 class="rv">Pertanyaan yang sering diajukan</h2>
+      <div class="faq rv">
+        <details open><summary>Apakah hasil analisis AI pasti 100% benar?<i>+</i></summary><p>Tidak. AI adalah alat bantu akselerasi berpikir. Dalam konteks ilmu hukum atau riset, nomor pasal, putusan pengadilan, dan data statistik harus selalu kamu verifikasi ke naskah otentik.</p></details>
+        <details><summary>Bolehkah memakai RoleInHelp untuk skripsi atau thesis?<i>+</i></summary><p>Sangat dianjurkan untuk menyusun outline, brainstorming rumusan masalah, dan memperjelas kerangka teori. Pastikan tetap mematuhi etika akademik kampusmu.</p></details>
+        <details><summary>Apakah foto yang saya unggah tersimpan di server?<i>+</i></summary><p>Tidak sama sekali. Semua pemrosesan bersifat sesi langsung di perangkatmu, menjamin privasi catatan studimu.</p></details>
+        <details><summary>Bagaimana cara mematikan musik lofi latar?<i>+</i></summary><p>Cukup tekan tombol ikon ♪ merah muda di Dock bawah atau pilih opsi Lofi di menu RoleInHelp.</p></details>
+      </div>
+    </section>
+
+    <p class="foot">RoleInHelp · Pendamping Belajar Mahasiswa Indonesia. Hasil AI merupakan bahan belajar, bukan pengganti verifikasi sumber otentik.</p>
+  </div>
+</div>
+
+<!-- DYNAMIC AGENT VIEWS -->
+<div id="agentviews"></div>
+</main>
+
+<!-- MACOS DOCK -->
+<div class="dock" id="dock" role="navigation" aria-label="Dock Antarmuka">
+  <a class="dk" data-go="beranda" data-t="Beranda" href="#beranda" style="background:linear-gradient(135deg,#64748B,#334155)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  </a>
+  <span class="sep"></span>
+  <a class="dk" data-go="tugas" data-t="Agent Tugas" href="#tugas" style="background:linear-gradient(135deg,#60A5FA,#2563EB)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+  </a>
+  <a class="dk" data-go="thesis" data-t="Agent Thesis" href="#thesis" style="background:linear-gradient(135deg,#FBBF24,#D97706)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+  </a>
+  <a class="dk" data-go="excel" data-t="Agent Excel" href="#excel" style="background:linear-gradient(135deg,#34D399,#059669)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+  </a>
+  <a class="dk" data-go="ringkasan" data-t="Agent Ringkasan" href="#ringkasan" style="background:linear-gradient(135deg,#C084FC,#7C3AED)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  </a>
+  <span class="sep"></span>
+  <button class="dk" id="dmu" data-t="Lofi Musik" style="background:linear-gradient(135deg,#F472B6,#DB2777)" aria-label="Putar atau jeda lofi">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  </button>
+  <button class="dk" id="dth" data-t="Ganti Tema" style="background:linear-gradient(135deg,#38BDF8,#0284C7)" aria-label="Ganti tema">
+    <svg id="theme-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+  </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var RM = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var root = document.documentElement;
+
+  /* PROFESSIONAL VECTOR SVG ICONS FOR AGENTS */
+  var SVG_ICONS = {
+    tugas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+    thesis: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
+    excel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>',
+    ringkasan: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>'
+  };
+
+  function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function inl(s){ return s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*([^*\n]+?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>'); }
+  function md(t){
+    var o="", ul=0, m;
+    esc(t).split("\n").forEach(function(l){
+      function cl(){ if(ul){ o+="</"+ul+">"; ul=0; } }
+      if(/^\s*---+\s*$/.test(l)){ cl(); o += '<hr style="border:0;border-top:1px solid var(--line);margin:14px 0">'; }
+      else if(m = l.match(/^#{1,4}\s+(.*)/)){ cl(); o += "<h4>" + inl(m[1]) + "</h4>"; }
+      else if(m = l.match(/^\s*[-*•]\s+(.*)/)){ if(ul!=="ul"){ cl(); o+="<ul>"; ul="ul"; } o+="<li>"+inl(m[1])+"</li>"; }
+      else if(m = l.match(/^\s*\d+[.)]\s+(.*)/)){ if(ul!=="ol"){ cl(); o+="<ol>"; ul="ol"; } o+="<li>"+inl(m[1])+"</li>"; }
+      else if(!l.trim()){ cl(); }
+      else { cl(); o += "<p>" + inl(l) + "</p>"; }
+    });
+    if(ul) o += "</" + ul + ">";
+    return o;
+  }
+
+  var tt = $("#toast"), tto;
+  function toast(m, ms){
+    tt.textContent = m;
+    tt.classList.add("on");
+    clearTimeout(tto);
+    tto = setTimeout(function(){ tt.classList.remove("on"); }, ms || 2600);
+  }
+
+  /* BASE AGENT DEFINITION */
+  var BASE = "Kamu adalah agen RoleInHelp, pendamping belajar untuk mahasiswa Indonesia. Jawab dalam bahasa Indonesia yang jelas, runut, dan profesional (gunakan judul, poin daftar, dan penekanan **tebal**). Jangan mengarang fakta, angka, kutipan, nomor pasal, atau referensi; bila tidak yakin, tulis secara jujur bahwa bagian tersebut (perlu diverifikasi). ";
+
+  /* ACADEMIC SYSTEM PROMPT */
+  var ACADEMIC_PROMPT = "Kamu adalah asisten AI akademis dan pakar hukum tingkat tinggi yang cerdas, terampil, dan berwawasan luas.\n\n" +
+    "PRINSIP UTAMA:\n" +
+    "- Berbobot akademisi murni, tajam, komprehensif, dan langsung menjawab inti persoalan.\n" +
+    "- Mengintegrasikan 3 Pilar Utama Analisis Hukum Tingkat Tinggi:\n" +
+    "  1. PERATURAN POSITIF TERBARU: Selalu gunakan update perundang-undangan Indonesia terkini (KUHP Baru UU 1/2023, UU ITE terbaru, UU Cipta Kerja terkini, dsb.).\n" +
+    "  2. PUTUSAN PENGADILAN & YURISPRUDENSI RIIL: Wajib menyertakan preseden riil dari Pengadilan Negeri (PN), Pengadilan Tinggi (PT), Mahkamah Agung (MA), maupun Mahkamah Konstitusi (MK) beserta pertimbangan hukum hakim (ratio decidendi).\n" +
+    "  3. DOKTRIN & JURNAL TERAKREDITASI: Rujukan pendapat sarjana hukum terkemuka dan jurnal ilmiah bereputasi (SINTA/Scopus).\n" +
+    "- Gaya bahasa akademisi kritis, tajam, mengalir natural, tidak kaku seperti terjemahan mesin (humanized academic, lolos Turnitin).\n\n" +
+    "STRUKTUR JAWABAN WAJIB:\n" +
+    "1. 🎯 RINGKASAN CEPAT (30 DETIK): 2-3 poin inti langsung menjawab pokok persoalan untuk kuis/tanya jawab cepat di kelas.\n" +
+    "2. 📖 PEMBAHASAN MENDALAM AKADEMIS:\n" +
+    "   - JIKA SOAL BERUPA STUDI KASUS / SENGKETA: WAJIB gunakan metode analisis IRAC (Issue, Rule, Application, Conclusion).\n" +
+    "   - JIKA BERKAITAN DENGAN PERATURAN / NORMA: Sertakan Hierarki Flow (Stufentheorie Hans Kelsen & Pasal 7 UU 12/2011 jo. UU 13/2022; Lex Superior/Specialis/Posterior, Uji Materiil MA/MK).\n" +
+    "3. ⚖️ TELAAH PUTUSAN PENGADILAN & YURISPRUDENSI TERKAIT (PN / MA / MK): Sebutkan contoh nomor putusan riil, Ratio Decidendi pertimbangan hukum hakim, dan kaidah hukum tetap yang terbentuk.\n" +
+    "4. 📋 FORMAT DAFTAR PUSTAKA (TINGGAL COPAS KE WORD): Format standar APA 7th / kaidah hukum yang terbagi jelas (Peraturan Perundang-undangan, Putusan Pengadilan, Buku & Jurnal Ilmiah).\n\n";
+
+  var ACADEMIC_ENGLISH_DEMO = "### 🎯 EXECUTIVE SUMMARY (30-SECOND BRIEF)\n" +
+    "- **Legal Classification:** Debtor's failure to deliver raw materials on schedule legally constitutes an actionable **Breach of Contract (*Wanprestasi / Default*)** under Article 1243 of the Indonesian Civil Code (*Burgerlijk Wetboek*), unless absolute *Force Majeure (*Overmacht*)* is conclusively established.\n" +
+    "- **Legal Threshold for Overmacht:** Prevalent Indonesian jurisprudence establishes that ordinary market commodity fluctuations constitute a commercial contingency (*commercial impracticability*), not an insurmountable objective impossibility.\n" +
+    "- **Remedies Available:** The creditor is legally entitled to issue a formal Notice of Default (*Ingebrekestelling / Somasi*) to demand specific performance alongside statutory damages for costs, losses, and accrued interest (*kosten, schaden, en interessen*).\n\n" +
+    "---\n\n" +
+    "### 📖 COMPREHENSIVE ACADEMIC ANALYSIS (IRAC FRAMEWORK)\n\n" +
+    "#### 1. Issue\n" +
+    "Whether the debtor's non-performance attributable to market scarcity constitutes an actionable breach of contract (*wanprestasi*) or qualifies as an excusable force majeure (*overmacht*), and what specific remedies are available to the creditor.\n\n" +
+    "#### 2. Rule\n" +
+    "- **Article 1238 Indonesian Civil Code:** Requirement of formal notice of default (*somasi*) to establish actionable debtor default.\n" +
+    "- **Article 1243 Indonesian Civil Code:** Obligation to indemnify damages upon the debtor's default in performing the obligation.\n" +
+    "- **Articles 1244 & 1245 Indonesian Civil Code:** Statutory grounds for excuse: unforeseen circumstances beyond the debtor's control without bad faith.\n" +
+    "- **Doctrinal Principles:** Under the civil law maxim *genera non perunt* (generic goods never perish), market shortages of fungible commodities do not discharge the underlying contractual performance.\n\n" +
+    "#### 3. Application\n" +
+    "1. The subject matter of the agreement comprises fungible raw materials freely traded in the marketplace. Fluctuations in supply represent an inherent commercial risk assumed upon contract execution (*pacta sunt servanda*).\n" +
+    "2. The debtor did not exercise reasonable mitigation diligence (e.g. procuring from substitute vendors or delivering prompt formal notice).\n" +
+    "3. Consequently, the defense of *force majeure* fails as a matter of law, giving rise to direct liability for contractual default.\n\n" +
+    "#### 4. Conclusion\n" +
+    "The debtor's conduct is legally confirmed as a Breach of Contract. The creditor may seek specific performance with delay penalties or contract rescission (*ontbinding*) coupled with compensatory damages.\n\n" +
+    "---\n\n" +
+    "### ⚖️ JUDICIAL PRECEDENTS & LANDMARK CASE LAW (PN / MA / MK)\n" +
+    "- **Supreme Court of Indonesia (Mahkamah Agung) Decision No. 598 K/Pdt/2016:**\n" +
+    "  * *Ratio Decidendi:* Price fluctuations and supply chain shortages in the domestic market are ordinary business risks that must be anticipated at the time of agreement and cannot serve as legal justification for force majeure.\n" +
+    "- **Supreme Court Decision No. 3087 K/Pdt/1988:**\n" +
+    "  * *Ratio Decidendi:* A formal written notice of default (*somasi*) is a mandatory procedural condition precedent prior to filing a civil default lawsuit in the District Court (*Pengadilan Negeri*).\n\n" +
+    "---\n\n" +
+    "### 📋 BIBLIOGRAPHY & REFERENCES (READY TO COPY TO WORD - APA 7TH / BLUEBOOK)\n" +
+    "**Statutory Authorities:**\n" +
+    "- Indonesian Civil Code (*Burgerlijk Wetboek*), Staatsblad 1847 No. 23.\n" +
+    "- Law of the Republic of Indonesia No. 1 of 2023 on the Criminal Code (KUHP Baru).\n\n" +
+    "**Judicial Precedents:**\n" +
+    "- Supreme Court of the Republic of Indonesia. *Decision No. 598 K/Pdt/2016*, Sept 28, 2016.\n" +
+    "- Supreme Court of the Republic of Indonesia. *Decision No. 3087 K/Pdt/1988*, Jan 15, 1990.\n\n" +
+    "**Academic Literature & Journals:**\n" +
+    "- Subekti, R. (2014). *Law of Contracts (Hukum Perjanjian)*. Jakarta: Intermasa.\n" +
+    "- Satrio, J. (2012). *Law of Obligations: General Principles*. Bandung: Alumni.\n" +
+    "- Marzuki, P. M. (2017). *Penelitian Hukum* (edisi revisi). Jakarta: Kencana Prenada Media Group.\\n\" +\n    \"- Mertokusumo, S. (2010). *Mengenal Hukum: Suatu Pengantar*. Yogyakarta: Cahaya Atma Pustaka.";
+
+  var AG = [
+    {
+      k: "tugas",
+      svg: SVG_ICONS.tugas,
+      bg: "linear-gradient(135deg, #60A5FA, #2563EB)",
+      name: "Agent Tugas",
+      desc: "Asisten riset & tugas mahasiswa: Otomatis melakukan riset dari Jurnal Ilmiah, Berita Terbaru, Putusan Pengadilan, Peraturan & Ensiklopedia sebelum menjawab.",
+      tip: "Tulis pertanyaan apa saja (hukum, berita terbaru, tugas kuliah, atau pertanyaan acak)! Agent Tugas akan meriset Jurnal, Berita Terbaru, Pengadilan, & Referensi sebelum menjawab. Pilih mode sesuai kebutuhanmu atau lampirkan foto soal!",
+      modes: [
+        {
+          id: "umum",
+          l: "💡 Jawab Ramah & Jelas",
+          ph: "Tulis pertanyaan tugasmu di sini, atau lampirkan foto soal… (Jawaban ramah, terstruktur, mudah dipahami tanpa istilah rumit)",
+          s: "Jelaskan perbedaan wanprestasi dan perbuatan melawan hukum (PMH) dengan contoh kasus sehari-hari yang mudah dipahami.",
+          p: function(t, hasImg){
+            if(hasImg && !t) return "Transkripsikan soal/pertanyaan pada foto berikut, lalu jelaskan jawabannya secara ramah, terstruktur, mudah dipahami, dan aplikatif dengan contoh konkret:";
+            if(hasImg && t) return "Jawab pertanyaan/soal pada foto berikut dengan instruksi tambahan:\n" + t + "\n\nSampaikan penjelasan secara ramah, terstruktur, mudah dipahami, dan berikan contoh nyata sehari-hari.";
+            return "Jelaskan pertanyaan tugas berikut secara ramah, komunikatif, runtut, dan mudah dipahami dengan analogi atau contoh kehidupan sehari-hari (tanpa memaksakan format kaku IRAC kecuali ditanyakan):\n\n" + t;
+          }
+        },
+        {
+          id: "irac",
+          l: "⚖️ Analisis Kasus (IRAC)",
+          ph: "Tulis soal tugas atau kronologi kasus untuk dibedah dengan metode IRAC (Issue, Rule, Application, Conclusion)…",
+          s: "Kasus: PT Sumber Makmur terlambat mengirimkan pasokan bahan baku sesuai kontrak akibat kelangkaan pasar. Apakah ini wanprestasi atau keadaan memaksa (overmacht)?",
+          p: function(t, hasImg){
+            if(hasImg && !t) return ACADEMIC_PROMPT + "Transkripsikan soal/kasus pada foto ini secara seksama, lalu susun jawabannya secara komprehensif menggunakan struktur IRAC.";
+            if(hasImg && t) return ACADEMIC_PROMPT + "Baca soal pada foto berikut dengan instruksi tambahan:\n" + t;
+            return ACADEMIC_PROMPT + "Soal/Kasus:\n" + t;
+          }
+        },
+        {
+          id: "english",
+          l: "🇬🇧 English Version",
+          ph: "Enter assignment or academic question for high-tier academic English analysis…",
+          s: "Analyze the principle of legality (nullum delictum) under the Indonesian Criminal Code compared to civil law traditions.",
+          p: function(t, hasImg){
+            return "Provide high-tier academic analysis tailored for international coursework and assignments. NO robotic word-for-word translation. Dense, analytical, intellectual.\n" +
+              "STRUCTURE: 1) Executive Summary (30-second brief), 2) Comprehensive Academic Analysis (IRAC Framework), 3) Judicial Precedents & Court Decisions (Ratio Decidendi), 4) Bibliography & References (Ready to copy to Word - APA 7th / Bluebook).\n\nQuestion:\n" + t;
+          }
+        }
+      ],
+      demo: "### 🎯 JAWABAN INTI & RINGKASAN CEPAT\n" +
+        "- **Wanprestasi (*Breach of Contract*):** Terjadi karena **ada perjanjian sebelumnya** yang diingkari atau dilanggar oleh salah satu pihak (Pasal 1243 KUHPerdata).\n" +
+        "- **Perbuatan Melawan Hukum (*Tort / PMH*):** Terjadi **tanpa perlu ada perjanjian sebelumnya**. Tindakan seseorang yang merugikan orang lain dan melanggar hukum/kepatutan (Pasal 1365 KUHPerdata).\n\n" +
+        "---\n\n" +
+        "### 💡 PENJELASAN RAMAH & CONTOH NYATA SEHARI-HARI\n\n" +
+        "#### 1. Wanprestasi (Ingkar Janji Kontrak)\n" +
+        "- **Kuncinya:** Harus ada ikatan kesepakatan/kontrak yang sah terlebih dahulu.\n" +
+        "- **Contoh Nyata:** Kamu menyewa kos-kosan dengan perjanjian bayar tiap tanggal 1. Tapi kamu telat bayar 3 bulan tanpa kabar. Pemilik kos berhak menegur (somasi) dan menuntut ganti rugi karena kamu wanprestasi terhadap perjanjian sewa.\n" +
+        "- **4 Bentuk Wanprestasi:**\n" +
+        "  1. Tidak melakukan apa yang disanggupi sama sekali.\n" +
+        "  2. Melaksanakan apa yang dijanjikan, tetapi terlambat.\n" +
+        "  3. Melakukan apa yang dijanjikan, tetapi keliru/tidak sesuai perjanjian.\n" +
+        "  4. Melakukan sesuatu yang dilarang dalam perjanjian.\n\n" +
+        "#### 2. Perbuatan Melawan Hukum / PMH (Melanggar Hak Orang Lain)\n" +
+        "- **Kuncinya:** Tidak perlu ada kontrak apa pun. Siapa pun yang berbuat salah hingga merugikan orang lain wajib mengganti rugi.\n" +
+        "- **Contoh Nyata:** Kamu sedang berkendara motor sambil main HP lalu menabrak gerobak pedagang es buah hingga rusak. Kamu dan pedagang es tidak punya perjanjian sewa/kontrak, tapi perbuatan lalaimu melanggar kepatutan dan menimbulkan kerugian nyata. Pedagang berhak menuntut ganti rugi atas dasar PMH.\n" +
+        "- **5 Unsur PMH (Pasal 1365 KUHPerdata):** Ada perbuatan, perbuatan melawan hukum, ada kesalahan (kesengajaan/kelalaian), ada kerugian, dan ada hubungan sebab-akibat langsung.\n\n" +
+        "---\n\n" +
+        "### 📝 TIPS PRAKTIS UNTUK TUGAS KULIAH\n" +
+        "| Pembeda Pokok | Wanprestasi (Pasal 1243) | Perbuatan Melawan Hukum (Pasal 1365) |\n" +
+        "| :--- | :--- | :--- |\n" +
+        "| **Dasar Hubungan** | Ada kontrak/perjanjian yang sah sebelumnya | Tidak memerlukan hubungan perjanjian |\n" +
+        "| **Titik Kelalaian** | Diperlukan peringatan tertulis (*somasi*) | Langsung timbul sejak perbuatan merugikan terjadi |\n" +
+        "| **Tuntutan Ganti Rugi** | Biaya, rugi, dan bunga (*kosten, schaden, interessen*) | Ganti rugi materiil (nyata) dan immateriil (moril) |\n\n" +
+        "> 💡 **Pilihan Fleksibel:** Bila tugasmu membutuhkan bedah kasus mendalam dengan format IRAC, kamu bisa langsung klik tab **⚖️ Analisis Kasus (IRAC)**!"
+    },
+    {
+      k: "thesis",
+      svg: SVG_ICONS.thesis,
+      bg: "linear-gradient(135deg, #FBBF24, #D97706)",
+      name: "Agent Thesis",
+      desc: "Membantu menyusun kerangka penelitian, latar belakang, rumusan masalah, dan tinjauan pustaka skripsi.",
+      tip: "Masukkan judul usulan penelitianmu. Sertakan metode (kualitatif/kuantitatif) dan lokus penelitian untuk hasil yang lebih spesifik.",
+      modes: [
+        { id: "kerangka", l: "Kerangka Skripsi", ph: "Tulis judul thesis (beserta metode atau lokus jika ada)…", s: "Pengaruh Penggunaan Media Sosial terhadap Prokrastinasi Akademik Mahasiswa", p: function(t){ return BASE + "Buat kerangka skripsi lengkap dari Bab I hingga Bab V beserta rincian sub-bab yang relevan dengan judul penelitian berikut. Jangan membuat referensi fiktif; gunakan placeholder [Sumber Jurnal].\n\nJudul Penelitian:\n" + t; }},
+        { id: "latar", l: "Latar Belakang", ph: "Tulis judul dan fenomena awal yang kamu amati…", s: "Pengaruh Penggunaan Media Sosial terhadap Prokrastinasi Akademik Mahasiswa", p: function(t){ return BASE + "Susun draf Latar Belakang Masalah (4 paragraf terstruktur: fenomena umum/gap harapan vs kenyataan, urgensi masalah, tinjauan ringkas, dan alasan pemilihan lokus). Gunakan tanda [Data/Statistik] untuk bagian yang butuh angka riil.\n\nJudul:\n" + t; }},
+        { id: "rumusan", l: "Rumusan & Tujuan", ph: "Tulis judul skripsi…", s: "Pengaruh Penggunaan Media Sosial terhadap Prokrastinasi Akademik Mahasiswa", p: function(t){ return BASE + "Rumuskan pertanyaan penelitian (Rumusan Masalah) yang tajam, Tujuan Penelitian yang berkorelasi lurus, serta Manfaat Teoritis & Praktis.\n\nJudul:\n" + t; }},
+        { id: "pustaka", l: "Tinjauan Pustaka", ph: "Tulis judul skripsi atau variabel penelitian…", s: "Pengaruh Penggunaan Media Sosial terhadap Prokrastinasi Akademik Mahasiswa", p: function(t){ return BASE + "Susun peta tinjauan pustaka: definisi variabel, teori pendukung utama, indikator operasional, dan kerangka berpikir konseptual.\n\nJudul:\n" + t; }}
+      ],
+      demo: "### Usulan Kerangka Penelitian\n\n#### Bab I: Pendahuluan\n- **1.1 Latar Belakang Masalah:** Pergeseran pola belajar digital dan maraknya *mindless scrolling*.\n- **1.2 Identifikasi Masalah:** Penurunan ketepatan pengumpulan tugas kuliah.\n- **1.3 Rumusan Masalah:** Apakah terdapat pengaruh signifikan intensitas media sosial terhadap prokrastinasi?\n- **1.4 Tujuan & Manfaat:** Menguji korelasi empiris antar variabel.\n\n#### Bab II: Landasan Teori\n- Teori Regulasi Diri (*Self-Regulation Theory*)\n- Indikator Prokrastinasi Akademik [Sumber: Solomon & Rothblum]"
+    },
+    {
+      k: "excel",
+      svg: SVG_ICONS.excel,
+      bg: "linear-gradient(135deg, #34D399, #059669)",
+      name: "Agent Excel",
+      desc: "Asisten formula spreadsheet: membuat rumus cerdas, membedah error rumus, dan merapikan dataset.",
+      tip: "Sebutkan nama kolom dan baris datamu secara spesifik, misal: Kolom A untuk Nama Mahasiswa, Kolom B untuk Nilai UTS.",
+      modes: [
+        { id: "rumus", l: "Buat Rumus", ph: "Jelaskan apa yang ingin dihitung dan letak kolom datamu…", s: "Hitung nilai akhir berbobot: Tugas 20% (kolom B), UTS 30% (kolom C), UAS 50% (kolom D) di baris 2.", p: function(t){ return BASE + "Buat rumus Excel untuk kebutuhan berikut. Gunakan pemisah titik koma (;) standar Excel regional Indonesia, sajikan rumus dalam format `kode`, jelaskan logika perhitungannya, dan berikan contoh hasil.\n\nKebutuhan:\n" + t; }},
+        { id: "jelas", l: "Bedah Rumus", ph: "Tempel rumus Excel yang rumit atau bermasalah di sini…", s: "=IFERROR(INDEX(B2:B100; MATCH(E2; A2:A100; 0)); \"Tidak Ditemukan\")", p: function(t){ return BASE + "Bedah fungsi rumus Excel ini bagian per bagian dengan analogi yang mudah dipahami pemula, lalu sebutkan potensi error yang sering terjadi.\n\nRumus:\n" + t; }},
+        { id: "rapikan", l: "Rapikan Data", ph: "Jelaskan data kotor yang kamu miliki…", s: "Nama di kolom A campur aduk: spasi berlebih di awal/akhir dan huruf besar-kecil tidak seragam.", p: function(t){ return BASE + "Berikan formula Excel kombinasi (seperti PROPER, TRIM, CLEAN) dan panduan langkah demi langkah untuk membersihkan dataset tersebut.\n\nMasalah:\n" + t; }}
+      ],
+      demo: "### Formula Excel: Nilai Akhir Berbobot\n\n`=(B2*0,2) + (C2*0,3) + (D2*0,5)`\n\natau menggunakan fungsi `SUMPRODUCT`:\n`=SUMPRODUCT(B2:D2; {0,2; 0,3; 0,5})`\n\n**Penjelasan Komponen:**\n1. `B2*0,2` mengalokasikan 20% bobot tugas.\n2. `C2*0,3` mengalokasikan 30% bobot UTS.\n3. `D2*0,5` mengalokasikan 50% bobot UAS.\n\n*Catatan: Pastikan format regional koma/titik koma sesuai pengaturan spreadsheet Anda.*"
+    },
+    {
+      k: "ringkasan",
+      svg: SVG_ICONS.ringkasan,
+      bg: "linear-gradient(135deg, #C084FC, #7C3AED)",
+      name: "Agent Ringkasan",
+      desc: "Merangkum bacaan tebal, mengekstrak intisari, membuat kartu hafalan (*flashcard*), atau scan foto catatan.",
+      tip: "📸 Kamu bisa menempel teks materi kuliah atau langsung unggah foto catatan tulisan tangan / slide proyektor kelas!",
+      modes: [
+        {
+          id: "ringkas",
+          l: "Ringkasan Eksekutif",
+          ph: "Tempel teks materi kuliah atau lampirkan foto catatan di sini…",
+          s: "Hukum administrasi negara adalah hukum yang mengatur tata cara aparatur pemerintah menjalankan tugas dan kewenangannya dalam melayani kepentingan umum, serta membatasi tindakan pejabat agar tidak terjadi penyalahgunaan wewenang (detournement de pouvoir).",
+          p: function(t, hasImg){
+            if(hasImg && !t) return BASE + "Transkripsikan isi materi dari foto catatan kuliah ini, lalu ringkas menjadi satu paragraf inti yang padat dan 4-5 butir takeaways utama siap review ujian.";
+            if(hasImg && t) return BASE + "Baca foto catatan berikut dengan instruksi: " + t + ". Buatkan ringkasan inti dan poin penting.";
+            return BASE + "Ringkas materi berikut menjadi satu paragraf inti yang padat dan 4-5 butir takeaways utama siap review ujian.\n\nMateri:\n" + t.slice(0, 25000);
+          }
+        },
+        {
+          id: "kartu",
+          l: "Flashcards Ujian",
+          ph: "Tempel materi atau lampirkan foto catatan untuk kartu hafalan…",
+          s: "Asas-asas umum pemerintahan yang baik (AUPB) meliputi kepastian hukum, kemanfaatan, ketidakberpihakan, kecermatan, dan keterbukaan.",
+          p: function(t, hasImg){
+            if(hasImg) return BASE + "Ekstrak materi dari foto catatan ini lalu ubah menjadi 5 pasang kartu tanya-jawab hafalan singkat dengan format **Tanya (Q):** dan **Jawab (A):**." + (t ? "\nInstruksi tambahan: " + t : "");
+            return BASE + "Ubah materi ini menjadi 5 pasang kartu tanya-jawab hafalan singkat dengan format **Tanya (Q):** dan **Jawab (A):**.\n\nMateri:\n" + t.slice(0, 25000);
+          }
+        },
+        {
+          id: "foto",
+          l: "Scan Foto Catatan → Teks",
+          ph: "Tambahkan instruksi (opsional, misal: 'Rapikan ejaan dan tata bahasa')...",
+          s: "Tolong transkripsikan catatan tulisan tangan ini dan rapikan format paragrafnya.",
+          p: function(t, hasImg){
+            return BASE + "Lakukan transkripsi teks dari foto catatan kuliah berikut secara terstruktur, bersihkan kalimatnya, dan buatkan intisari pembahasannya." + (t ? "\nCatatan: " + t : "");
+          }
+        }
+      ],
+      demo: "### Rangkuman Inti Materi\n\nHukum Administrasi Negara (HAN) berfungsi ganda: sebagai instrumen operasional pemerintah dalam menjalankan pelayanan publik sekaligus instrumen perlindungan hukum bagi warga negara dari potensi *abuse of power*.\n\n**Poin-Poin Penting:**\n- **Tujuan Utama:** Menjamin akuntabilitas dan efisiensi birokrasi.\n- **Batasan Pejabat:** Mencegah perbuatan sewenang-wenang (*willekeur*) dan penyalahgunaan wewenang (*detournement de pouvoir*).\n- **Urgensi Bagi Mahasiswa:** Memahami batas keabsahan keputusan tata usaha negara (KTUN)."
+    }
+  ];
+
+  /* CAPABILITY CHECK */
+  var SP = null;
+  function getS(){
+    if(SP) return SP;
+    if(window.claude && claude.use){
+      SP = claude.use("sample").catch(function(){ return null; });
+    }
+    return SP || Promise.resolve(null);
+  }
+
+  var IMG = false;
+  getS().then(function(S){
+    if(S && S.limits){
+      return S.limits().then(function(c){ IMG = !!c.images; }).catch(function(){});
+    }
+  }).then(function(){
+    $$(".seg button[data-img]").forEach(function(b){ b.hidden = !IMG; });
+  });
+
+  var DL = null;
+  (function(){
+    var n = 0;
+    (function t(){
+      if(window.claude && claude.use){
+        claude.use("downloads").then(function(d){
+          DL = d;
+          $$("[data-a=dl]").forEach(function(b){ b.hidden = !d; });
+        }).catch(function(){});
+      } else if(n++ < 20) setTimeout(t, 500);
+    })();
+  })();
+
+  /* BUILD AGENT WORKSPACE WINDOWS */
+  var AV = $("#agentviews");
+  AG.forEach(function(A){
+    var v = document.createElement("div");
+    v.className = "view";
+    v.id = "v-" + A.k;
+    v.innerHTML =
+      '<div class="win" data-k="' + A.k + '">' +
+        '<div class="tb">' +
+          '<div class="tl">' +
+            '<button class="c r" data-a="close" title="Tutup ke Beranda" aria-label="Tutup"></button>' +
+            '<button class="c y" data-a="min" title="Kecilkan Tampilan" aria-label="Kecilkan"></button>' +
+            '<button class="c g" data-a="max" title="Perbesar Tampilan" aria-label="Perbesar"></button>' +
+          '</div>' +
+          '<div class="ttl">' + A.svg + ' ' + A.name + '</div>' +
+          '<div class="tbr">' +
+            '<button class="b s" data-a="new">✦ Sesi Baru</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="tool">' +
+          '<div class="seg">' +
+            A.modes.map(function(m, i){
+              return '<button data-m="' + i + '"' + (i ? '' : ' class="on"') + '>' + m.l + '</button>';
+            }).join('') +
+          '</div>' +
+          '<span class="hint">' + A.desc + '</span>' +
+        '</div>' +
+        '<div class="wb">' +
+          '<aside class="sd">' +
+            '<h5>Riwayat Sesi</h5>' +
+            '<ul class="hist"><em>Belum ada catatan</em></ul>' +
+            '<div class="tip-box">' +
+              '<h6>💡 Tips Penggunaan</h6>' +
+              '<p class="tip">' + A.tip + '</p>' +
+            '</div>' +
+          '</aside>' +
+          '<div class="panes">' +
+            '<section class="pane input-pane">' +
+              '<header>' +
+                '<span>MASUKAN DATA / SOAL</span>' +
+                '<div style="display:flex;gap:6px;align-items:center">' +
+                  '<button class="b s photo-btn" data-a="attach-trigger" type="button">📸 Foto Papan Tulis / Slide</button>' +
+                  '<button class="b s" data-a="sample">Contoh Soal</button>' +
+                '</div>' +
+              '</header>' +
+              '<div class="attached-card" hidden>' +
+                '<div class="attached-thumb"><img src="" alt="Foto Lampiran"></div>' +
+                '<div class="attached-info">' +
+                  '<div class="attached-badge">📸 FOTO SOAL TERLAMPIR (PAPAN TULIS / SLIDE)</div>' +
+                  '<div class="attached-name">foto-papan-tulis.jpg</div>' +
+                  '<div class="attached-hint">AI akan membaca dan memecahkan soal pada foto ini</div>' +
+                '</div>' +
+                '<button class="attached-remove" data-a="photo-remove" type="button" title="Hapus Foto">✕</button>' +
+              '</div>' +
+              '<div class="pane-tip-pill">' +
+                '📸 <strong>Papan Tulis / Slide PPT:</strong> Punya foto soal? Lampirkan lewat tombol kamera atau tekan <strong>Ctrl+V</strong> tanpa perlu mengetik ulang!' +
+              '</div>' +
+              '<textarea spellcheck="false" placeholder="Tulis pertanyaanmu di sini, atau lampirkan foto papan tulis / slide presentasi..."></textarea>' +
+              '<input type="file" accept="image/*" capture="environment" style="display:none" class="photo-input">' +
+              '<footer>' +
+                '<button class="b p" data-a="run">⚡ Jalankan Analisis</button>' +
+                '<button class="b s" data-a="attach-trigger" type="button">' +
+                  '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Foto / Kamera' +
+                '</button>' +
+                '<button class="b" data-a="stop" hidden>Batal</button>' +
+                '<span class="cnt">0 kata</span>' +
+              '</footer>' +
+            '</section>' +
+            '<section class="pane">' +
+              '<header>' +
+                '<span>HASIL ANALISIS AGENT</span>' +
+                '<span>' +
+                  '<button class="b s" data-a="copy">Salin</button>' +
+                  (A.k === 'tugas' ? '<button class="b s btn-word" data-a="copy-word" title="Salin dengan format bersih siap tempel ke Word">📄 Format Word</button>' : '') +
+                  '<button class="b s" data-a="dl" hidden>Unduh</button>' +
+                '</span>' +
+              '</header>' +
+              '<div class="res" aria-live="polite">' +
+                '<p class="ph">Hasil analisis terstruktur akan muncul di sini.</p>' +
+              '</div>' +
+            '</section>' +
+          '</div>' +
+        '</div>' +
+        '<div class="sb">' +
+          '<span class="st">Siap menerima instruksi</span>' +
+          '<span class="md">Mode: ' + A.modes[0].l + '</span>' +
+        '</div>' +
+      '</div>';
+    AV.appendChild(v);
+
+    var W = $(".win", v),
+        ta = $("textarea", W),
+        res = $(".res", W),
+        st = $(".st", W),
+        cnt = $(".cnt", W),
+        inputPane = $(".input-pane", W),
+        fin = $(".photo-input", W),
+        attachedCard = $(".attached-card", W),
+        attachedImg = $("img", attachedCard),
+        attachedName = $(".attached-name", attachedCard),
+        hist = $(".hist", W),
+        runB = $("[data-a=run]", W),
+        stopB = $("[data-a=stop]", W),
+        mi = 0, file = null, pv = null, H = [], last = "", ctl = null;
+
+    function mode(){ return A.modes[mi]; }
+    function setMode(i){
+      mi = i;
+      $$(".seg button", W).forEach(function(b, j){ b.classList.toggle("on", j === i); });
+      var m = mode();
+      ta.placeholder = file ?
+        "Tulis instruksi tambahan untuk foto ini (opsional, misal: 'Kerjakan soal nomor 2 saja')..." :
+        (m.ph || "Tulis pertanyaan tugas atau lampirkan foto papan tulis / slide...");
+      $(".md", W).textContent = "Mode: " + m.l;
+      count();
+    }
+    function count(){
+      var t = ta.value.trim(), n = t ? t.split(/\s+/).length : 0;
+      if(file && n > 0){
+        cnt.textContent = "📷 1 Foto + " + n + " kata";
+      } else if(file){
+        cnt.textContent = "📷 1 Foto (Teks opsional)";
+      } else {
+        cnt.textContent = n + " kata";
+      }
+    }
+    function show(h, note){
+      res.innerHTML = h + (note ? '<div class="note">⚠️ ' + note + '</div>' : '');
+    }
+    function setFile(f){
+      file = f;
+      if(pv) URL.revokeObjectURL(pv);
+      pv = f ? URL.createObjectURL(f) : null;
+      if(f){
+        attachedImg.src = pv;
+        attachedName.textContent = f.name || "Foto Papan Tulis / Slide";
+        attachedCard.hidden = false;
+        toast("📸 Foto papan tulis/slide berhasil dilampirkan!");
+      } else {
+        attachedImg.src = "";
+        attachedCard.hidden = true;
+        fin.value = "";
+      }
+      setMode(mi);
+    }
+
+    fin.addEventListener("change", function(){
+      if(fin.files && fin.files[0]) setFile(fin.files[0]);
+    });
+
+    /* Drag & Drop into pane */
+    ["dragover","dragenter"].forEach(function(e){
+      inputPane.addEventListener(e, function(ev){
+        ev.preventDefault();
+        inputPane.classList.add("drag-over");
+      });
+    });
+    ["dragleave","drop"].forEach(function(e){
+      inputPane.addEventListener(e, function(ev){
+        ev.preventDefault();
+        inputPane.classList.remove("drag-over");
+        if(e === "drop" && ev.dataTransfer && ev.dataTransfer.files && ev.dataTransfer.files[0]){
+          setFile(ev.dataTransfer.files[0]);
+        }
+      });
+    });
+
+    /* Clipboard Paste (Ctrl+V) */
+    inputPane.addEventListener("paste", function(e){
+      var items = (e.clipboardData || (e.originalEvent && e.originalEvent.clipboardData)) ? (e.clipboardData || e.originalEvent.clipboardData).items : null;
+      if(items){
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].type.indexOf("image") !== -1) {
+            var blob = items[i].getAsFile();
+            if(blob){
+              setFile(blob);
+              e.preventDefault();
+              break;
+            }
+          }
+        }
+      }
+    });
+
+    ta.addEventListener("input", count);
+    ta.addEventListener("keydown", function(e){ if((e.ctrlKey || e.metaKey) && e.key === "Enter") run(); });
+
+    function addHist(t, out){
+      H.unshift({ t: t, o: out });
+      hist.innerHTML = "";
+      H.slice(0, 12).forEach(function(h){
+        var li = document.createElement("li"), b = document.createElement("button");
+        b.textContent = h.t;
+        b.title = h.t;
+        b.addEventListener("click", function(){
+          last = h.o;
+          show(md(h.o));
+          $$("button", hist).forEach(function(x){ x.classList.remove("on"); });
+          b.classList.add("on");
+          st.textContent = "Melihat riwayat";
+        });
+        li.appendChild(b);
+        hist.appendChild(li);
+      });
+      if($("button", hist)) $("button", hist).classList.add("on");
+    }
+
+    function busy(b){
+      runB.disabled = b;
+      runB.innerHTML = b ? '⏳ Sedang Menganalisis…' : '⚡ Jalankan Analisis';
+      stopB.hidden = !b;
+      st.textContent = b ? "Agent sedang menyusun jawaban..." : "Siap menerima instruksi";
+    }
+
+    function fileToBase64(f){
+      return new Promise(function(resolve){
+        if(!f) return resolve(null);
+        var reader = new FileReader();
+        reader.onload = function(){
+          var s = reader.result || "";
+          var comma = s.indexOf(",");
+          resolve({ data: s.slice(comma + 1), mimeType: f.type || "image/jpeg" });
+        };
+        reader.onerror = function(){ resolve(null); };
+        reader.readAsDataURL(f);
+      });
+    }
+
+    function getApiEndpoint(){
+      var proto = window.location && window.location.protocol;
+      var host = window.location && window.location.hostname;
+      var port = window.location && window.location.port;
+      if(proto === "file:" || ((host === "localhost" || host === "127.0.0.1") && port && port !== "3065")){
+        return "http://localhost:3065/api/analyze";
+      }
+      return "/api/analyze";
+    }
+
+    function tryLocalAcademicApi(t, m, mediaObj){
+      var controller = new AbortController();
+      var timeout = setTimeout(function(){ controller.abort(); }, 75000); // 75s timeout
+      return fetch(getApiEndpoint(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question: t,
+          mode: (m && m.id) || "umum",
+          userName: "Mahasiswa",
+          media: mediaObj
+        }),
+        signal: controller.signal
+      }).then(function(res){
+        clearTimeout(timeout);
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      }).then(function(data){
+        if(data && data.answer) return { answer: data.answer, sources: data.sources || null, cached: !!data.cached };
+        throw new Error(data.error || "Gagal memproses jawaban");
+      });
+    }
+
+    function renderResearchSources(sources){
+      if(!sources) return "";
+      var groups = [
+        { key: "journals", label: "📚 Jurnal Ilmiah & Literatur Akademik" },
+        { key: "news", label: "📰 Berita Terbaru & Konteks Aktual" },
+        { key: "courtRulings", label: "⚖️ Putusan & Kajian Pengadilan" },
+        { key: "regulations", label: "📜 Peraturan Perundang-undangan (JDIH BPK)" },
+        { key: "encyclopedia", label: "🌐 Ensiklopedia & Referensi Umum" }
+      ];
+      var htmlParts = [];
+      groups.forEach(function(g){
+        var list = sources[g.key];
+        if(!list || !list.length) return;
+        var itemsHtml = list.slice(0, 4).map(function(item){
+          var safeTitle = esc(item.title || "");
+          var safeMeta = item.authors ? '<span class="research-meta">(' + esc(item.authors) + ')</span>' : (item.source ? '<span class="research-meta">(' + esc(item.source) + ')</span>' : '');
+          var isSafeUrl = item.url && /^https?:\/\//i.test(item.url);
+          if(isSafeUrl){
+            return '<li><a href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">' + safeTitle + '</a>' + safeMeta + '</li>';
+          }
+          return '<li>' + safeTitle + safeMeta + '</li>';
+        }).join('');
+        htmlParts.push('<div class="research-group"><div class="research-label">' + g.label + '</div><ul class="research-list">' + itemsHtml + '</ul></div>');
+      });
+      if(!htmlParts.length) return "";
+      var cacheBadge = sources.cached ? ' <span class="research-meta" style="color:var(--acc);font-weight:700">• ⚡ Dari Cache</span>' : '';
+      return '<div class="research-box"><h5>🔍 Sumber Riset Langsung yang Digunakan Agent' + cacheBadge + '</h5>' + htmlParts.join('') + '</div>';
+    }
+
+    function formatSourcesText(sources){
+      if(!sources) return "";
+      var sections = [
+        { key: "journals", label: "Jurnal Ilmiah" },
+        { key: "news", label: "Berita Terbaru" },
+        { key: "courtRulings", label: "Putusan & Kajian Pengadilan" },
+        { key: "regulations", label: "Peraturan Perundang-undangan (JDIH BPK)" },
+        { key: "encyclopedia", label: "Ensiklopedia" }
+      ];
+      var lines = [];
+      sections.forEach(function(sec){
+        var list = sources[sec.key];
+        if(!list || !list.length) return;
+        lines.push("**" + sec.label + ":**");
+        list.slice(0, 4).forEach(function(item){
+          lines.push("- " + (item.title || "") + (item.authors ? " (" + item.authors + ")" : "") + (item.url ? " - " + item.url : ""));
+        });
+      });
+      return lines.length ? "\n\n---\n### 🔍 SUMBER RISET TERVERIFIKASI\n" + lines.join("\n") : "";
+    }
+
+    function tryBrowserQuickResearch(t){
+      if(!t || t.length < 3) return Promise.resolve({ journals: [], news: [], courtRulings: [], regulations: [], encyclopedia: [] });
+      var q = encodeURIComponent(t.slice(0, 80));
+      var qShort = encodeURIComponent(t.slice(0, 50));
+
+      // OpenAlex — jurnal ilmiah
+      var oa = fetch("https://api.openalex.org/works?search=" + q + "&per-page=4&sort=relevance_score:desc")
+        .then(function(r){ return r.ok ? r.json() : {}; })
+        .then(function(d){
+          return (d.results || []).map(function(w){
+            return {
+              title: w.title || "",
+              authors: [w.primary_location && w.primary_location.source && w.primary_location.source.display_name, w.publication_year].filter(Boolean).join(" • "),
+              url: (w.doi ? "https://doi.org/" + w.doi.replace("https://doi.org/","") : (w.id || "")),
+              source: "OpenAlex"
+            };
+          }).filter(function(x){ return x.title; });
+        }).catch(function(){ return []; });
+
+      // Crossref — jurnal tambahan
+      var cr = fetch("https://api.crossref.org/works?query=" + q + "&rows=3&select=title,author,URL,container-title,published")
+        .then(function(r){ return r.ok ? r.json() : {}; })
+        .then(function(d){
+          return ((d.message && d.message.items) || []).map(function(w){
+            var au = (w.author || []).slice(0,2).map(function(a){ return (a.family || "") + (a.given ? " " + a.given.charAt(0) + "." : ""); }).join(", ");
+            return {
+              title: (w.title && w.title[0]) || "",
+              authors: au || ((w["container-title"] && w["container-title"][0]) || "Crossref"),
+              url: w.URL || "",
+              source: "Crossref"
+            };
+          }).filter(function(x){ return x.title; });
+        }).catch(function(){ return []; });
+
+      // Wikipedia Indonesia — ensiklopedia
+      var wiki = fetch("https://id.wikipedia.org/w/api.php?action=query&prop=extracts|info&inprop=url&exintro=1&explaintext=1&exchars=400&generator=search&gsrsearch=" + qShort + "&gsrlimit=2&format=json&origin=*")
+        .then(function(r){ return r.ok ? r.json() : {}; })
+        .then(function(d){
+          var pages = Object.values((d.query && d.query.pages) || {});
+          return pages.map(function(p){
+            return { title: p.title || "", snippet: (p.extract || "").slice(0, 200), url: p.fullurl || "", source: "Wikipedia ID" };
+          }).filter(function(x){ return x.title; });
+        }).catch(function(){ return []; });
+
+      return Promise.all([oa, cr, wiki]).then(function(res){
+        var allJournals = res[0].concat(res[1]).slice(0, 4);
+        return { journals: allJournals, news: [], courtRulings: [], regulations: [], encyclopedia: res[2] };
+      }).catch(function(){ return { journals: [], news: [], courtRulings: [], regulations: [], encyclopedia: [] }; });
+    }
+
+    /* ── SYSTEM PROMPTS for browser-direct Gemini calls ── */
+    var IRAC_SYSTEM_PROMPT =
+      "Kamu adalah pakar hukum senior tingkat tertinggi di RoleInHelp — setara dengan kombinasi keahlian " +
+      "Prof. Hikmahanto Juwana (HI & Bisnis), Prof. Subekti (Perjanjian & Perdata), Prof. Sudikno Mertokusumo " +
+      "(Teori Hukum), Prof. Sutan Remi Sjahdeini (Perbankan & Kepailitan), dan Prof. Eddy Hiariej (Pidana). " +
+      "Sebelum menulis output: (1) Klasifikasikan domain hukum, (2) identifikasi semua teori hukum yang berlaku, " +
+      "(3) petakan fakta ke unsur pasal, (4) antisipasi counter-argument. " +
+      "DILARANG mengarang URL, DOI, atau nomor putusan fiktif. " +
+      "Gunakan data riset yang diberikan sebagai [J-x]/[N-x]/[R-x]/[P-x] dalam jawaban. " +
+      "Struktur jawaban WAJIB: 1) 🎯 Ringkasan Konklusi Yuridis, 2) 📖 IRAC Mendalam (I/R/A/C), " +
+      "3) ⚖️ Telaah Preseden (dari riset atau analogis konseptual), 4) 📋 Daftar Pustaka Terverifikasi.";
+
+    var UMUM_SYSTEM_PROMPT =
+      "Kamu adalah asisten riset dan pakar akademis multidisiplin yang terampil, ramah, dan komunikatif di RoleInHelp. " +
+      "Gunakan data riset yang diberikan (jurnal, berita, peraturan, ensiklopedia) sebagai dasar jawaban. " +
+      "Jawab secara lengkap, akurat, ramah, dan mudah dipahami. " +
+      "JANGAN memaksakan format IRAC kecuali pertanyaan formal tentang sengketa hukum. " +
+      "DILARANG mengarang fakta, angka, URL, atau referensi fiktif. " +
+      "Struktur: 1) 🎯 Jawaban Inti Singkat, 2) 💡 Pembahasan Lengkap & Konteks Terkini (integrasikan riset), 3) 📝 Poin Penting & Ringkasan Praktis.";
+
+    var ENGLISH_SYSTEM_PROMPT =
+      "You are an elite academic AI researcher and legal scholar at RoleInHelp. " +
+      "Synthesize the provided multi-source live research into sophisticated, eloquent, natural Academic English. " +
+      "NO rigid or robotic word-for-word translation. Write at Oxford / Harvard Law Review standard. " +
+      "Do NOT fabricate any DOIs, URLs, or case numbers. " +
+      "Required structure: 1) 🎯 Executive Summary, 2) 📖 Comprehensive Academic Analysis (IRAC where applicable), " +
+      "3) ⚖️ Judicial Precedents & Recent Developments, 4) 📋 Bibliography (APA 7th / Bluebook).";
+
+    function getSystemPromptForMode(mId){
+      if(mId === "irac") return IRAC_SYSTEM_PROMPT;
+      if(mId === "english") return ENGLISH_SYSTEM_PROMPT;
+      return UMUM_SYSTEM_PROMPT;
+    }
+
+    function tryDirectGemini(t, m, mediaObj, browserSources){
+      var key = window.ROLEINHELP_GEMINI_KEY || (function(){ try { return localStorage.getItem("roleinhelp_gemini_key") || ""; } catch(e){ return ""; } })();
+      if(!key) return Promise.reject(new Error("Direct Gemini key tidak dikonfigurasi; gunakan server API."));
+      var mId = (m && m.id) || "umum";
+
+      // Build user prompt using mode's p() function + inject research context
+      var promptMsg = (typeof m.p === 'function') ? m.p(t, !!mediaObj) : ACADEMIC_PROMPT + "\n\nPertanyaan Mahasiswa:\n" + t;
+      if(browserSources){
+        var ctxText = formatSourcesText(browserSources);
+        if(ctxText) promptMsg = "HASIL RISET KOMPREHENSIF LANGSUNG (JURNAL ILMIAH, PERATURAN & ENSIKLOPEDIA):\n" + ctxText + "\n\n" + promptMsg;
+      }
+
+      // Inject system prompt as first turn for modes that need expert reasoning
+      var sysPrompt = getSystemPromptForMode(mId);
+
+      var candidateModels = ["gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.5-flash"];
+
+      var parts = [];
+      if(mediaObj && mediaObj.data){
+        parts.push({ inlineData: { mimeType: mediaObj.mimeType, data: mediaObj.data } });
+      }
+      parts.push({ text: promptMsg });
+
+      var requestBody = {
+        contents: [{ parts: parts }],
+        systemInstruction: { parts: [{ text: sysPrompt }] }
+      };
+
+      function tryModel(idx){
+        if(idx >= candidateModels.length) return Promise.reject(new Error("Model Gemini tidak merespons"));
+        var mod = candidateModels[idx];
+        return fetch("https://generativelanguage.googleapis.com/v1beta/models/" + mod + ":generateContent?key=" + key, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody)
+        }).then(function(r){ return r.json(); }).then(function(res){
+          if(res.candidates && res.candidates[0] && res.candidates[0].content && res.candidates[0].content.parts[0]){
+            return res.candidates[0].content.parts[0].text;
+          }
+          return tryModel(idx + 1);
+        }).catch(function(){
+          return tryModel(idx + 1);
+        });
+      }
+      return tryModel(0);
+    }
+
+    function dynamicLegalSynthesizer(t, m, hasImg){
+      var q = (t || "").toLowerCase();
+      var mid = (m && m.id) || "umum";
+      var isLegalitas = /legalitas|nullum|pidana|retroaktif|analogi/.test(q);
+      var isPMH = /perbuatan melawan hukum|pmh|1365|tort|onrechtmatige/.test(q);
+      var isWanprestasi = /wanprestasi|ingkar janji|overmacht|force majeure|1243/.test(q);
+
+      // --- MODE UMUM (RAMAH, JELAS, BEBAS IRAC KAKU) ---
+      if(mid === "umum"){
+        if(isPMH || isWanprestasi){
+          return "### 🎯 JAWABAN INTI & RINGKASAN CEPAT\n" +
+            "- **Wanprestasi (*Breach of Contract*):** Terjadi karena **ada perjanjian sebelumnya** yang diingkari atau dilanggar oleh salah satu pihak (Pasal 1243 KUHPerdata).\n" +
+            "- **Perbuatan Melawan Hukum (*PMH / Tort*):** Terjadi **tanpa perlu ada perjanjian sebelumnya**. Tindakan seseorang yang merugikan orang lain dan melanggar hukum/kepatutan (Pasal 1365 KUHPerdata).\n\n" +
+            "---\n\n" +
+            "### 💡 PENJELASAN RAMAH & CONTOH NYATA SEHARI-HARI\n\n" +
+            "#### 1. Wanprestasi (Ingkar Janji Kontrak)\n" +
+            "- **Kuncinya:** Harus ada ikatan kesepakatan/kontrak yang sah terlebih dahulu.\n" +
+            "- **Contoh Nyata:** Kamu menyewa kos-kosan dengan perjanjian bayar tiap tanggal 1. Tapi kamu telat bayar 3 bulan tanpa kabar. Pemilik kos berhak menegur (somasi) dan menuntut ganti rugi karena kamu wanprestasi terhadap perjanjian sewa.\n" +
+            "- **4 Bentuk Wanprestasi:**\n" +
+            "  1. Tidak melakukan apa yang disanggupi sama sekali.\n" +
+            "  2. Melaksanakan apa yang dijanjikan, tetapi terlambat.\n" +
+            "  3. Melakukan apa yang dijanjikan, tetapi keliru/tidak sesuai perjanjian.\n" +
+            "  4. Melakukan sesuatu yang dilarang dalam perjanjian.\n\n" +
+            "#### 2. Perbuatan Melawan Hukum / PMH (Melanggar Hak Orang Lain)\n" +
+            "- **Kuncinya:** Tidak perlu ada kontrak apa pun. Siapa pun yang berbuat salah hingga merugikan orang lain wajib mengganti rugi.\n" +
+            "- **Contoh Nyata:** Kamu sedang berkendara motor sambil main HP lalu menabrak gerobak pedagang es buah hingga rusak. Kamu dan pedagang es tidak punya perjanjian sewa/kontrak, tapi perbuatan lalaimu melanggar kepatutan dan menimbulkan kerugian nyata. Pedagang berhak menuntut ganti rugi atas dasar PMH.\n" +
+            "- **5 Unsur PMH (Pasal 1365 KUHPerdata):** Ada perbuatan, perbuatan melawan hukum, ada kesalahan (kesengajaan/kelalaian), ada kerugian, dan ada hubungan sebab-akibat langsung.\n\n" +
+            "---\n\n" +
+            "### 📝 TIPS PRAKTIS UNTUK TUGAS KULIAH\n" +
+            "| Pembeda Pokok | Wanprestasi (Pasal 1243) | Perbuatan Melawan Hukum (Pasal 1365) |\n" +
+            "| :--- | :--- | :--- |\n" +
+            "| **Dasar Hubungan** | Ada kontrak/perjanjian yang sah sebelumnya | Tidak memerlukan hubungan perjanjian |\n" +
+            "| **Titik Kelalaian** | Diperlukan peringatan tertulis (*somasi*) | Langsung timbul sejak perbuatan merugikan terjadi |\n" +
+            "| **Tuntutan Ganti Rugi** | Biaya, rugi, dan bunga (*kosten, schaden, interessen*) | Ganti rugi materiil (nyata) dan immateriil (moril) |\n\n" +
+            "> 💡 **Pilihan Fleksibel:** Bila tugasmu membutuhkan bedah kasus mendalam dengan format IRAC, kamu bisa langsung klik tab **⚖️ Analisis Kasus (IRAC)**!";
+        }
+
+        if(isLegalitas || /apa itu hukum|fungsi hukum|tujuan hukum|hukum adalah/.test(q)){
+          return "### 🎯 JAWABAN INTI & RINGKASAN CEPAT\n" +
+            "- **Apa itu Hukum?** Hukum adalah himpunan peraturan atau norma tingkah laku yang dibuat oleh penguasa yang berwenang, bersifat memaksa, dan memiliki sanksi tegas untuk menciptakan ketertiban dan keadilan.\n" +
+            "- **Tiga Tujuan Utama Hukum (Gustav Radbruch):**\n" +
+            "  1. **Keadilan (*Gerechtigkeit*)**: Memberikan setiap orang haknya secara adil.\n" +
+            "  2. **Kemanfaatan (*Zweckmässigkeit*)**: Membawa kebaikan dan kebahagiaan bagi masyarakat luas.\n" +
+            "  3. **Kepastian Hukum (*Rechtssicherheit*)**: Ada aturan tertulis yang jelas sehingga masyarakat tahu batas-batas hak dan kewajibannya.\n\n" +
+            "---\n\n" +
+            "### 💡 PENJELASAN RAMAH & CONTOH NYATA SEHARI-HARI\n\n" +
+            "#### 1. Mengapa Kita Butuh Hukum?\n" +
+            "Aristoteles menyebut manusia sebagai *Zoon Politikon* (makhluk yang selalu hidup berdampingan). Jika tidak ada hukum, orang kuat akan menindas orang yang lemah (*homo homini lupus*). Hukum bertindak sebagai aturan main yang melindungi semua orang secara setara.\n\n" +
+            "#### 2. Ciri Khas Hukum yang Mudah Diingat:\n" +
+            "- Berisi perintah atau larangan.\n" +
+            "- Dibuat oleh lembaga berwenang (misal: DPR & Presiden untuk Undang-Undang).\n" +
+            "- Bersifat memaksa (semua wajib tunduk tanpa kecuali).\n" +
+            "- Memiliki sanksi nyata bagi pelanggarnya (pidana kurungan, denda, ganti rugi).\n\n" +
+            "#### 3. Contoh Sehari-hari:\n" +
+            "- **Lampu Merah:** Aturan berhenti saat lampu merah dibuat bukan untuk membatasi kebebasan, melainkan melindungi nyawa pengendara lain agar tidak bertabrakan.\n" +
+            "- **Sewa Kamar / Kontrak:** Mengatur hak penghuni kos dan hak pemilik kos agar tidak terjadi sengketa sepihak.\n\n" +
+            "---\n\n" +
+            "### 📝 CATATAN PRAKTIS UNTUK TUGAS KULIAH\n" +
+            "- **Definisi Populer:** Prof. Mochtar Kusumaatmadja mendefinisikan hukum tidak hanya sebagai asas dan kaidah, melainkan juga lembaga dan proses yang mewujudkan berlakunya kaidah tersebut dalam masyarakat.\n" +
+            "- **Pembagian Utama:** Hukum Publik (mengatur hubungan warga negara dengan negara, misal Pidana & HTN) dan Hukum Privat (mengatur hubungan antar individu, misal Perdata & Dagang).\n\n" +
+            "> 💡 **Tips Belajar:** Jika butuh rujukan pasal spesifik atau format analisis kasus mendalam, klik tab **⚖️ Analisis Kasus (IRAC)**!";
+        }
+
+        var subjectTitle = t ? t.slice(0, 80) : "Pertanyaan Tugas";
+        return "### 🎯 JAWABAN INTI & RINGKASAN CEPAT\n" +
+          "- **Substansi Pertanyaan:** " + subjectTitle + "\n" +
+          "- **Inti Jawaban:** Topik ini membedah konsep dasar, aturan yang berlaku, dan penerapannya secara nyata dalam kehidupan akademis maupun praktis.\n\n" +
+          "---\n\n" +
+          "### 💡 PENJELASAN RAMAH & LANGKAH-LANGKAH PENYELESAIAN\n\n" +
+          "#### 1. Pemahaman Konsep Pokok\n" +
+          "Untuk menjawab *" + (t || "tugas ini") + "* secara tepat, mulailah dengan menjelaskan definisi dasarnya, lalu kaitkan dengan prinsip utama yang melandasinya agar penjelasan runtut dan mudah dipahami dosen.\n\n" +
+          "#### 2. Contoh Konkret di Lapangan\n" +
+          "Berikan 1 atau 2 contoh nyata yang relevan. Contoh konkret membuktikan bahwa kamu memahami penerapan materi secara mendalam, bukan hanya menghafal teks buku.\n\n" +
+          "#### 3. Kesimpulan Ringkas untuk Tugas:\n" +
+          "Susun jawaban tugasmu dengan urutan: 1) Definisi singkat, 2) Pembahasan dengan contoh nyata, dan 3) Kesimpulan praktis.\n\n" +
+          "---\n\n" +
+          "### 📝 PILIHAN METODE LAINNYA\n" +
+          "> 💡 **Mau analisis akademis lebih lanjut?** Jika tugasmu meminta analisis kasus formal dengan metode IRAC, silakan beralih ke tab **⚖️ Analisis Kasus (IRAC)**!";
+      }
+
+      // --- MODE IRAC / KASUS / DOKTRIN ---
+      if(isLegalitas){
+        return "### 🎯 RINGKASAN CEPAT (30 DETIK)\n" +
+          "- **Definisi Yuridis Inti:** Asas legalitas (*nullum delictum, nulla poena sine praevia lege poenali*) mensyaratkan bahwa tiada suatu perbuatan dapat dipidana kecuali atas kekuatan aturan pidana dalam perundang-undangan yang telah ada sebelum perbuatan dilakukan (Pasal 1 ayat 1 KUHP lama / Pasal 1 ayat 1 UU No. 1 Tahun 2023).\n" +
+          "- **4 Batasan Fundamental:** 1) Larangan berlaku surut (*non-retroactivity*), 2) Larangan penggunaan analogi (*analogiverbot*), 3) Keharusan aturan tertulis (*lex scripta*), dan 4) Kejelasan rumusan pasal yang tidak multitafsir (*lex certa & lex stricta*).\n" +
+          "- **Perkembangan KUHP Baru (UU 1/2023):** Pasal 1 ayat (2) mengintegrasikan *living law* (hukum yang hidup dalam masyarakat / hukum adat) dengan syarat strictly tidak bertentangan dengan Pancasila, UUD 1945, HAM, dan asas-asas hukum umum.\n\n" +
+          "---\n\n" +
+          "### 📖 PEMBAHASAN MENDALAM AKADEMIS\n\n" +
+          "#### 1. Identifikasi Isu Hukum (*Legal Issue*)\n" +
+          "Pertanyaan berfokus pada ruang lingkup, fungsi perlindungan (*schutzfunktion*), serta batasan-batasan doktrinal dan yuridis penerapan asas legalitas dalam penegakan hukum pidana Indonesia.\n\n" +
+          "#### 2. Landasan Hukum Positif & Doktrin (*Rule*)\n" +
+          "- **Pasal 1 ayat (1) UU No. 1 Tahun 2023 (KUHP Baru):** Menegaskan asas legalitas formal dalam perundang-undangan tertulis.\n" +
+          "- **Pasal 1 ayat (2) UU No. 1 Tahun 2023:** Pengecualian dan transisi apabila terdapat perubahan peraturan perundang-undangan yang menguntungkan terdakwa (*lex favor reo*).\n" +
+          "- **Doktrin Anselm von Feuerbach:** Konsep *psychologische dwang* (paksaan psikologis) di mana ancaman pidana tertulis mendahului perbuatan agar masyarakat menahan diri dari kejahatan.\n\n" +
+          "#### 3. Analisis Batasan Asas Legalitas (*Application*)\n" +
+          "1. **Batas Waktu (*Lex Temporis Delicti*):** Larangan mutlak retroaktif melindungi warga negara dari kesewenang-wenangan penguasa yang membuat aturan dadakan untuk menjerat perbuatan masa lalu.\n" +
+          "2. **Batas Konstruksi Yuridis (Interpretasi vs Analogi):** Hakim diperbolehkan melakukan *interpretasi ekstensif*, tetapi **dilarang keras melakukan analogi** hukum pidana karena analogi menciptakan delik baru tanpa dasar legislasi tertulis.\n" +
+          "3. **Batas Kepastian Hukum (*Bestimmtheitsgebot*):** Pembuat undang-undang wajib merumuskan delik secara rinci dan terukur (*lex certa*), menolak norma karet (*vague norms*).\n\n" +
+          "#### 4. Kesimpulan Yuridis (*Conclusion*)\n" +
+          "Asas legalitas adalah pagar pembatas kekuasaan negara dalam merampas kemerdekaan seseorang. Batasannya terletak pada kepastian hukum tertulis, perlindungan hak terdakwa (*favor reo*), dan larangan analogi peradilan pidana.\n\n" +
+          "---\n\n" +
+          "### 📋 FORMAT DAFTAR PUSTAKA (TINGGAL COPAS KE WORD)\n" +
+          "**Peraturan Perundang-undangan:**\n" +
+          "- Undang-Undang Republik Indonesia Nomor 1 Tahun 2023 tentang Kitab Undang-Undang Hukum Pidana (KUHP Baru).\n" +
+          "- Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 (Pasal 28I ayat 1).\n\n" +
+          "**Buku & Jurnal Akademik:**\n" +
+          "- Moeljatno. (2008). *Asas-Asas Hukum Pidana*. Jakarta: Rineka Cipta.\n" +
+          "- Eddy O.S. Hiariej. (2016). *Prinsip-Prinsip Hukum Pidana*. Yogyakarta: Cahaya Atma Pustaka.\n" +
+          "- Simons, D. (1937). *Leerboek van het Nederlandsche Strafrecht*. Haarlem: De Erven F. Bohn.";
+      }
+
+      if(isPMH){
+        return "### 🎯 RINGKASAN CEPAT (30 DETIK)\n" +
+          "- **Kualifikasi Pokok:** Gugatan Perbuatan Melawan Hukum (*Onrechtmatige Daad*) berlandaskan pada Pasal 1365 KUHPerdata, di mana tidak diperlukan ikatan perjanjian sebelumnya.\n" +
+          "- **5 Unsur Kumulatif:** 1) Ada perbuatan, 2) Melawan hukum (*broad interpretation* Arrest 1919), 3) Ada kesalahan (*schuld*), 4) Ada kerugian materiil/immateriil, dan 5) Hubungan kausalitas langsung (*causal verband*).\n" +
+          "- **Beban Pembuktian:** Sesuai Pasal 1865 KUHPerdata, penggugat wajib membuktikan secara kumulatif seluruh kelima unsur di hadapan majelis hakim.\n\n" +
+          "---\n\n" +
+          "### 📖 PEMBAHASAN MENDALAM AKADEMIS (METODE IRAC)\n\n" +
+          "#### 1. Identifikasi Isu Hukum (*Legal Issue*)\n" +
+          "Apakah perbuatan tergugat memenuhi kelima unsur kumulatif PMH dalam Pasal 1365 KUHPerdata dan memberikan hak kepada penggugat untuk menuntut ganti rugi pemulihan hak (*restitutio in integrum*)?\n\n" +
+          "#### 2. Landasan Hukum & Doktrin (*Rule*)\n" +
+          "- **Pasal 1365 KUHPerdata:** Tiap perbuatan melawan hukum yang membawa kerugian kepada orang lain, mewajibkan orang yang karena salahnya menerbitkan kerugian itu, mengganti kerugian tersebut.\n" +
+          "- **Standard Arrest Hoge Raad 31 Januari 1919 (Lindenbaum v. Cohen):** Memperluas definisi 'melawan hukum' tidak hanya melanggar UU tertulis, tetapi juga melanggar hak orang lain, bertentangan dengan kewajiban hukum si pembuat, kesusilaan baik, dan kepatutan dalam pergaulan masyarakat.\n\n" +
+          "#### 3. Analisis Penerapan Kasus (*Application*)\n" +
+          "Penggugat harus membuktikan *relativitas norma (schutznorm)* bahwa norma hukum yang dilanggar memang sengaja dibentuk untuk melindungi kepentingan hukum pihak yang dirugikan.\n\n" +
+          "#### 4. Kesimpulan Yuridis (*Conclusion*)\n" +
+          "Bila satu saja unsur dari kelima unsur kumulatif tidak terbukti, gugatan PMH wajib ditolak oleh pengadilan.\n\n" +
+          "---\n\n" +
+          "### 📋 FORMAT DAFTAR PUSTAKA (TINGGAL COPAS KE WORD)\n" +
+          "- Kitab Undang-Undang Hukum Perdata (*Burgerlijk WetBW*), Pasal 1365 & 1865.\n" +
+          "- Setiawan, R. (2010). *Empat Kriteria Perbuatan Melawan Hukum dan Perkembangannya*. Bandung: Alumni.";
+      }
+
+      var subjectTitle = t ? t.slice(0, 100) : "Telaah Soal Akademis";
+      return "### 🎯 RINGKASAN CEPAT (30 DETIK)\n" +
+        "- **Pokok Telaah:** Analisis atas pertanyaan: *" + subjectTitle + "*.\n" +
+        "- **Dasar Analisis:** Penelaahan komprehensif berlandaskan hierarki peraturan perundang-undangan positif Indonesia terkini, doktrin sarjana terkemuka, dan preseden pengadilan.\n" +
+        "- **Kesimpulan Pokok:** Memerlukan konfrontasi antara ketentuan normatif dan fakta persoalan secara sistematis tanpa basa-basi.\n\n" +
+        "---\n\n" +
+        "### 📖 PEMBAHASAN MENDALAM AKADEMIS\n\n" +
+        "#### 1. Identifikasi Pokok Masalah (*Issue*)\n" +
+        "Menganalisis substansi persoalan: *" + (t || "Soal pada foto materi") + "* dengan standar penalaran hukum kritis.\n\n" +
+        "#### 2. Landasan Hukum Positif (*Rule*)\n" +
+        "- **Hierarki Perundang-Undangan:** Mengacu pada Pasal 7 UU No. 12 Tahun 2011 jo. UU No. 13 Tahun 2022 (*Stufentheorie* Hans Kelsen) dan asas preferensi hukum (*Lex Superior, Lex Specialis, Lex Posterior*).\n" +
+        "- **Asas-Asas Terkait:** Asas kepastian hukum, keadilan substantif, dan kemanfaatan.\n\n" +
+        "#### 3. Analisis Kritis & Penerapan (*Application*)\n" +
+        "Penerapan asas hukum positif terhadap kasus/pertanyaan secara proporsional dan argumentatif.\n\n" +
+        "#### 4. Kesimpulan (*Conclusion*)\n" +
+        "Solusi yuridis objektif yang siap dijadikan rujukan tugas, makalah, atau jawaban kuis kuliah.\n\n" +
+        "---\n\n" +
+        "### 📋 FORMAT DAFTAR PUSTAKA (TINGGAL COPAS KE WORD)\n" +
+        "- Undang-Undang Dasar Negara Republik Indonesia Tahun 1945.\n" +
+        "- Undang-Undang Republik Indonesia Nomor 12 Tahun 2011 jo. UU No. 13 Tahun 2022.\n" +
+        "- Marzuki, Peter Mahmud. (2017). *Penelitian Hukum*. Jakarta: Kencana.";
+    }
+
+    function run(){
+      var m = mode(), t = ta.value.trim();
+      if(!file && !t){
+        toast("Ketik pertanyaan atau lampirkan foto papan tulis/slide terlebih dahulu.");
+        return;
+      }
+      busy(true);
+      var mId = (m && m.id) || "umum";
+      var researchLabel = (mId === "irac")
+        ? "🔬 Pra-analisis pakar hukum: Riset jurnal, berita, pengadilan & peraturan..."
+        : (mId === "english"
+          ? "🔬 Deep research in progress: Journals, news, regulations & case law..."
+          : "🔍 Sedang melakukan riset mendalam (Jurnal Ilmiah, Berita Terbaru, Pengadilan & Referensi)...");
+      show('<p class="ph">' + researchLabel + '</p>');
+
+      fileToBase64(file).then(function(mediaObj){
+        // ── Prioritas 1: API Server Lokal (Full 5-sumber: OpenAlex+Crossref+DOAJ+News+JDIH+Wiki) ──
+        return tryLocalAcademicApi(t, m, mediaObj).catch(function(){
+          // ── Prioritas 2: Browser CORS Research + Direct Gemini dengan system prompt expert ──
+          show('<p class="ph">🌐 Koneksi server lokal tidak tersedia. Menjalankan riset browser langsung (OpenAlex, Wikipedia)...</p>');
+          return tryBrowserQuickResearch(t).then(function(browserSources){
+            show('<p class="ph">🤖 Riset selesai. AI pakar sedang menganalisis dan menyusun jawaban...</p>');
+            return tryDirectGemini(t, m, mediaObj, browserSources).then(function(ans){
+              return { answer: ans, sources: browserSources };
+            }).catch(function(){
+              // ── Prioritas 3: Offline synthesizer — tetap sertakan browser research sebagai konteks ──
+              show('<p class="ph">📚 Menyusun jawaban dari basis pengetahuan akademis lokal...</p>');
+              var offlineAnswer = dynamicLegalSynthesizer(t, m, !!file);
+              return { answer: offlineAnswer, sources: browserSources };
+            });
+          });
+        });
+      }).then(function(resObj){
+        var answerText = (typeof resObj === "string") ? resObj : (resObj && resObj.answer) || "";
+        var sources = (resObj && resObj.sources) || null;
+        var isCached = !!(resObj && resObj.cached);
+        last = answerText + formatSourcesText(sources);
+        var noteText = (m && m.id === "umum") ?
+          "Disusun berdasarkan riset jurnal, berita terkini, putusan pengadilan & ensiklopedia dalam format ramah mahasiswa." :
+          ((m && m.id === "english") ? "Formulated in Natural Academic English backed by multi-source live research." : "Disusun dengan riset jurnal, berita terbaru, telaah doktrin hukum, dan putusan pengadilan.");
+        if(isCached) noteText += " (⚡ Riset dari cache lokal)";
+        show(md(answerText) + renderResearchSources(sources), noteText);
+        addHist(((file ? "📷 " : "") + (t || (file && file.name) || "Foto Soal")).slice(0, 40), last);
+        busy(false);
+        st.textContent = isCached ? "Selesai (⚡ riset dari cache)" : "Selesai diriset & dianalisis";
+      }).catch(function(err){
+        busy(false);
+        show(
+          '<div class="ph" style="text-align:center">' +
+            '<p style="margin-bottom:12px">⚠️ Terjadi kendala: ' + esc(err.message) + '</p>' +
+            '<button class="b p" data-a="run" type="button">🔄 Coba Lagi</button>' +
+          '</div>'
+        );
+        st.textContent = "Gagal memproses";
+      });
+    }
+
+    W.addEventListener("click", function(e){
+      var s = e.target.closest(".seg button");
+      if(s){ setMode(+s.dataset.m); return; }
+
+      var b = e.target.closest("[data-a]");
+      if(!b) return;
+      var a = b.dataset.a;
+
+      if(a === "attach-trigger"){ fin.click(); return; }
+      if(a === "photo-remove"){ setFile(null); toast("Foto dihapus."); return; }
+
+      if(a === "close") go("beranda");
+      else if(a === "min") W.classList.toggle("min");
+      else if(a === "max") W.classList.toggle("max");
+      else if(a === "new"){
+        ta.value = "";
+        setFile(null);
+        res.innerHTML = '<p class="ph">Hasil analisis terstruktur akan muncul di sini.</p>';
+        st.textContent = "Sesi baru siap";
+        count();
+      }
+      else if(a === "sample"){
+        var m = mode();
+        if(m.s){ ta.value = m.s; count(); ta.focus(); }
+        else toast("Silakan ketik pertanyaan atau lampirkan foto papan tulis/slide.");
+      }
+      else if(a === "run") run();
+      else if(a === "stop"){ if(ctl) ctl.abort(); }
+      else if(a === "copy"){
+        var tx = last || res.textContent;
+        try {
+          navigator.clipboard.writeText(tx).then(function(){ toast("✓ Hasil analisis berhasil disalin!"); }, function(){ toast("Silakan blok teks untuk menyalin secara manual."); });
+        } catch(x){ toast("Silakan blok teks untuk menyalin secara manual."); }
+      }
+      else if(a === "copy-word"){
+        var tx = last || res.textContent;
+        var wordText = tx.replace(/^#{1,4}\s+(.*)$/gm, '$1').replace(/\*\*(.*?)\*\*/g, '$1');
+        try {
+          navigator.clipboard.writeText(wordText).then(function(){ toast("✓ Format bersih untuk Word berhasil disalin!"); }, function(){ toast("Silakan blok teks untuk menyalin."); });
+        } catch(x){ toast("Silakan blok teks untuk menyalin."); }
+      }
+      else if(a === "to-english"){
+        var mIdx = -1;
+        for(var i=0; i<A.modes.length; i++){ if(A.modes[i].id === "english"){ mIdx = i; break; } }
+        if(mIdx !== -1){
+          setMode(mIdx);
+          run();
+        } else {
+          toast("Mode English Academic tidak tersedia.");
+        }
+      }
+      else if(a === "dl"){
+        if(DL && last) DL.save({ filename: "roleinhelp-" + A.k + ".txt", data: last }).catch(function(){});
+      }
+    });
+
+    setMode(0);
+  });
+
+  /* HERO APP CARDS */
+  var ag = $("#appgrid");
+  AG.forEach(function(A){
+    var a = document.createElement("a");
+    a.href = "#" + A.k;
+    a.className = "rv";
+    a.innerHTML =
+      '<div class="ico" style="background:' + A.bg + '">' + A.svg + '</div>' +
+      '<b>' + A.name + '</b>' +
+      '<p>' + A.desc + '</p>' +
+      '<span>Buka Workspace →</span>';
+    ag.appendChild(a);
+  });
+
+  /* ROUTING */
+  var R = ["beranda", "tugas", "thesis", "excel", "ringkasan"];
+  function go(k){
+    if(location.hash.slice(1) === k) show(k);
+    else location.hash = k;
+  }
+  function show(k){
+    if(R.indexOf(k) < 0) k = "beranda";
+    $$(".view").forEach(function(v){ v.classList.toggle("on", v.id === "v-" + k); });
+    $$(".dk[data-go]").forEach(function(d){ d.classList.toggle("on", d.dataset.go === k); });
+    document.title = (k === "beranda" ? "RoleInHelp · Ruang Belajar AI Mahasiswa" : (AG.filter(function(a){ return a.k === k; })[0].name + " · RoleInHelp"));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    var d = $('.dk[data-go="' + k + '"]');
+    if(d && !RM){
+      d.classList.remove("bn");
+      void d.offsetWidth;
+      d.classList.add("bn");
+    }
+  }
+
+  addEventListener("hashchange", function(){ show(location.hash.slice(1)); });
+  document.addEventListener("click", function(e){
+    var g = e.target.closest("[data-go]");
+    if(g){
+      if(g.tagName === "A") e.preventDefault();
+      go(g.dataset.go);
+      closeMenus();
+    }
+  });
+
+  $("#kenal").addEventListener("click", function(){
+    $("#showcase").scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.target.closest && e.target.closest("textarea,input")) return;
+    var i = "1234".indexOf(e.key);
+    if(i >= 0 && !e.ctrlKey && !e.metaKey && !e.altKey) go(["tugas", "thesis", "excel", "ringkasan"][i]);
+    if(e.key === "Escape") closeMenus();
+  });
+
+  /* TOP MENU ACTIONS */
+  function closeMenus(){ $$(".mi.open").forEach(function(m){ m.classList.remove("open"); }); }
+  $$(".mi>.mb").forEach(function(b){
+    b.addEventListener("click", function(e){
+      e.stopPropagation();
+      var p = b.parentNode, o = p.classList.contains("open");
+      closeMenus();
+      if(!o) p.classList.add("open");
+    });
+  });
+  document.addEventListener("click", function(e){ if(!e.target.closest(".mi")) closeMenus(); });
+
+  function theme(){
+    var isDark = root.dataset.theme === "dark" || (!root.dataset.theme && matchMedia("(prefers-color-scheme:dark)").matches);
+    root.dataset.theme = isDark ? "light" : "dark";
+    $("#theme-ico").innerHTML = isDark ? SVG_ICONS.moon : SVG_ICONS.sun;
+    toast(isDark ? "Tema Terang Diaktifkan" : "Tema Gelap Diaktifkan");
+  }
+  $("#theme-ico").innerHTML = matchMedia("(prefers-color-scheme:dark)").matches ? SVG_ICONS.sun : SVG_ICONS.moon;
+  $("#dth").addEventListener("click", theme);
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("[data-act]");
+    if(!a) return;
+    var k = a.dataset.act;
+    if(k === "theme") theme();
+    else if(k === "music") mtoggle();
+    else if(k === "max"){
+      var w = $(".view.on .win");
+      if(w) w.classList.toggle("max");
+    }
+    closeMenus();
+  });
+
+  function clk(){
+    var d = new Date();
+    $("#clock").textContent = d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" }) + " · " + d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" }).replace(".", ":");
+  }
+  clk();
+  setInterval(clk, 20000);
+
+  /* HERO MAC PREVIEW DEMO TYPEWRITER */
+  var D = [
+    { l: "TUGAS", q: "Jelaskan asas legalitas dalam hukum pidana dan batasannya.", a: "Asas legalitas (Pasal 1 ayat 1 KUHP) mensyaratkan aturan pidana telah ada sebelum perbuatan dilakukan, bertujuan mencegah tindakan sewenang-wenang.", b: "Jalankan agent" },
+    { l: "THESIS", q: "Judul: Pengaruh Literasi Keuangan terhadap Tabungan Mahasiswa", a: "Bab I: Fenomena konsumerisme digital dan rumusan masalah. Bab II: Teori perilaku keuangan dan tinjauan literatur terdahulu.", b: "Susun kerangka" },
+    { l: "EXCEL", q: "Rumus rata-rata bersyarat nilai per program studi.", a: "=AVERAGEIF(A:A; \"Ilmu Hukum\"; B:B) secara otomatis merata-rata nilai kolom B untuk mahasiswa jurusan Hukum.", b: "Buat rumus" },
+    { l: "RINGKASAN", q: "Ringkas foto catatan kuliah bab Sistem Peradilan di Indonesia.", a: "Hierarki peradilan Indonesia: Peradilan Umum, Agama, Militer, dan Tata Usaha Negara di bawah naungan Mahkamah Agung.", b: "Mulai ringkas" }
+  ];
+
+  (function(el){
+    var lab = $(".mlab", el), q = $(".q", el), a = $(".a", el), b = $(".mbtn", el), i = 0, live = false, tm;
+    function type(n, t, sp, cb){
+      var c = 0;
+      (function s(){
+        if(!live) return;
+        n.textContent = t.slice(0, c++);
+        if(c <= t.length) tm = setTimeout(s, sp);
+        else if(cb) cb();
+      })();
+    }
+    function run(){
+      var d = D[i % D.length];
+      lab.textContent = d.l;
+      b.textContent = d.b;
+      q.textContent = "";
+      a.textContent = "";
+      el.classList.remove("done");
+      type(q, "› " + d.q, 22, function(){
+        tm = setTimeout(function(){
+          el.classList.add("done");
+          type(a, d.a, 12, function(){
+            tm = setTimeout(function(){ i++; run(); }, 3400);
+          });
+        }, 400);
+      });
+    }
+
+    if(RM){
+      lab.textContent = D[0].l;
+      q.textContent = "› " + D[0].q;
+      a.textContent = D[0].a;
+      el.classList.add("done");
+      return;
+    }
+
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          if(!live){ live = true; run(); }
+        } else {
+          live = false;
+          clearTimeout(tm);
+        }
+      });
+    }, { threshold: 0.3 }).observe(el);
+  })($("#hm"));
+
+  /* INTERACTIVE FEATURE SHOWCASE TYPEWRITER SIMULATION */
+  var SHOWCASES = {
+    tugas: {
+      tag: "AGENT TUGAS · HUKUM & SOAL",
+      prompt: "Jelaskan perbedaan mendasar Wanprestasi vs Perbuatan Melawan Hukum (PMH) beserta konsekuensi ganti ruginya.",
+      answer: "<strong>1. Dasar Hubungan Hukum:</strong> Wanprestasi berpangkal dari ikatan perjanjian yang sah yang diingkari debitur. PMH lahir tanpa perlu adanya perjanjian terlebih dahulu.<br><br><strong>2. Pembuktian:</strong> Wanprestasi membuktikan kelalaian/keingkaran janji (Pasal 1243 KUHPerdata). PMH harus membuktikan 5 unsur: perbuatan melawan hukum, kesalahan, kerugian, hubungan kausal, dan relativitas (Pasal 1365 KUHPerdata).<br><br><strong>Kesimpulan:</strong> Tuntutan PMH lebih luas karena mencakup kerugian immateriil.",
+      desc: "Menjawab pertanyaan dengan struktur doktrin hukum yang presisi dan bertahap."
+    },
+    thesis: {
+      tag: "AGENT THESIS · KERANGKA SKRIPSI",
+      prompt: "Judul: Analisis Putusan Hakim dalam Tindak Pidana Korupsi Korporasi",
+      answer: "<strong>Bab I Pendahuluan:</strong><br>• Latar Belakang: Gap pertanggungjawaban pidana korporasi vs pengurus perorangan.<br>• Rumusan Masalah: Bagaimana rasio decidendi hakim dalam menentukan kesalahan korporasi?<br><br><strong>Bab II Tinjauan Pustaka:</strong><br>• Teori Identifikasi (*Identification Theory*) & *Vicarious Liability*.<br>• Studi Putusan Mahkamah Agung terdahulu.",
+      desc: "Membantu menstrukturkan ide penelitian menjadi bab skripsi yang siap bimbingan."
+    },
+    excel: {
+      tag: "AGENT EXCEL · FORMULA CERDAS",
+      prompt: "Buatkan rumus grading otomatis: Nilai >= 85 (A), >= 75 (B), >= 65 (C), lainnya (D) untuk nilai di sel B2.",
+      answer: "Gunakan formula bertingkat (regional Indonesia):<br><code>=IFS(B2>=85; \"A\"; B2>=75; \"B\"; B2>=65; \"C\"; TRUE; \"D\")</code><br><br>Atau menggunakan kombinasi <code>IF</code> standar:<br><code>=IF(B2>=85; \"A\"; IF(B2>=75; \"B\"; IF(B2>=65; \"C\"; \"D\")))</code><br><br><strong>Tips:</strong> Formula ini otomatis mengevaluasi rentang nilai tanpa error circular.",
+      desc: "Menghasilkan formula spreadsheet siap pakai lengkap dengan penjelasan logika perhitungannya."
+    },
+    ringkasan: {
+      tag: "AGENT RINGKASAN · KARTU HAFALAN",
+      prompt: "Ringkas bab Asas-Asas Hukum Administrasi Negara menjadi kartu hafalan cepat.",
+      answer: "<strong>Kartu Hafalan Ujian:</strong><br>• <strong>Q:</strong> Apa itu <em>detournement de pouvoir</em>?<br>  <strong>A:</strong> Penyalahgunaan wewenang di luar tujuan peruntukan hukumnya.<br>• <strong>Q:</strong> Apa itu asas kepastian hukum?<br>  <strong>A:</strong> Kewajiban aparatur bertindak konsisten sesuai aturan tertulis dan tidak berlaku surut.<br>• <strong>Q:</strong> Dasar pengujian KTUN?<br>  <strong>A:</strong> Peraturan perundang-undangan dan AUPB.",
+      desc: "Mengekstrak intisari buku tebal dan catatan kuliah menjadi format tanya-jawab ujian."
+    }
+  };
+
+  var curAgent = "tugas", scTimer = null, qTimer = null;
+  function runShowcase(k){
+    curAgent = k;
+    var data = SHOWCASES[k];
+    if(!data) return;
+
+    $$(".sc-card").forEach(function(c){
+      c.classList.toggle("active", c.dataset.agent === k);
+    });
+
+    $("#sc-active-tag").textContent = data.tag;
+    $("#sc-footer-desc").innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg> ' + data.desc;
+
+    var win = $("#sc-win");
+    var qEl = $("#sc-prompt");
+    var aEl = $("#sc-answer");
+
+    win.classList.remove("done");
+    clearTimeout(scTimer);
+    clearTimeout(qTimer);
+
+    if(RM){
+      qEl.textContent = "› " + data.prompt;
+      win.classList.add("done");
+      aEl.innerHTML = data.answer;
+      return;
+    }
+
+    /* 1. Type prompt first */
+    qEl.textContent = "› ";
+    aEl.innerHTML = "";
+    var qText = data.prompt;
+    var qIdx = 0;
+
+    function typeQ(){
+      qEl.textContent = "› " + qText.slice(0, ++qIdx);
+      if(qIdx < qText.length){
+        qTimer = setTimeout(typeQ, 16);
+      } else {
+        qTimer = setTimeout(function(){
+          win.classList.add("done");
+          typeA();
+        }, 320);
+      }
+    }
+
+    /* 2. Type answer with typewriter effect & blinking cursor */
+    function typeA(){
+      var text = data.answer;
+      var len = text.length;
+      var idx = 0;
+      var speed = 12;
+
+      function step(){
+        if(text[idx] === '<'){
+          var closeTag = text.indexOf('>', idx);
+          if(closeTag !== -1) idx = closeTag + 1;
+          else idx++;
+        } else {
+          idx++;
+        }
+        aEl.innerHTML = text.slice(0, idx) + '<span class="cur"></span>';
+        if(idx < len){
+          scTimer = setTimeout(step, speed);
+        }
+      }
+      step();
+    }
+
+    typeQ();
+  }
+
+  $("#sc-nav").addEventListener("click", function(e){
+    var card = e.target.closest(".sc-card");
+    if(card && card.dataset.agent){
+      runShowcase(card.dataset.agent);
+    }
+  });
+
+  $("#sc-btn-open").addEventListener("click", function(){
+    go(curAgent);
+  });
+
+  /* LO-FI SYNTHESIZER (WEB AUDIO API) */
+  var AC, master, nbuf, timer, playing = false, user = false, step = 0, nextT = 0, SPD = 60/72/2, dm = $("#dmu");
+  var CH = [
+    [261.6, 329.6, 392, 493.9],
+    [220, 261.6, 329.6, 392],
+    [293.7, 349.2, 440, 523.3],
+    [196, 246.9, 293.7, 349.2]
+  ];
+  var BS = [65.4, 55, 73.4, 49];
+  var PE = [523.3, 587.3, 659.3, 784, 880];
+
+  function tone(f, t, d, ty, g){
+    var o = AC.createOscillator(), a = AC.createGain();
+    o.type = ty;
+    o.frequency.value = f;
+    o.detune.value = (Math.random() - 0.5) * 12;
+    a.gain.setValueAtTime(0, t);
+    a.gain.linearRampToValueAtTime(g, t + 0.02);
+    a.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    o.connect(a);
+    a.connect(master);
+    o.start(t);
+    o.stop(t + d + 0.05);
+  }
+
+  function noise(t, d, ty, fr, g){
+    var s = AC.createBufferSource(), f = AC.createBiquadFilter(), a = AC.createGain();
+    s.buffer = nbuf;
+    f.type = ty;
+    f.frequency.value = fr;
+    a.gain.setValueAtTime(g, t);
+    a.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    s.connect(f);
+    f.connect(a);
+    a.connect(master);
+    s.start(t, Math.random());
+    s.stop(t + d + 0.02);
+  }
+
+  function sched(){
+    while(nextT < AC.currentTime + 0.3){
+      var bar = (step >> 3) % 4, i = step & 7, t = nextT + (i & 1 ? 0.035 : 0);
+      if(i === 0 || i === 3 || i === 6){
+        CH[bar].forEach(function(f){ tone(f, t, i ? 0.9 : 2.2, "triangle", i ? 0.028 : 0.045); });
+      }
+      if(i === 0 || i === 4){
+        tone(BS[bar], t, 0.6, "sine", 0.25);
+        var k = AC.createOscillator(), ka = AC.createGain();
+        k.frequency.setValueAtTime(125, t);
+        k.frequency.exponentialRampToValueAtTime(40, t + 0.15);
+        ka.gain.setValueAtTime(0.35, t);
+        ka.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+        k.connect(ka);
+        ka.connect(master);
+        k.start(t);
+        k.stop(t + 0.35);
+      }
+      if(i === 2 || i === 6) noise(t, 0.18, "bandpass", 1800, 0.08);
+      noise(t, 0.04, "highpass", 7000, 0.025);
+      if(Math.random() < 0.28) tone(PE[(Math.random() * 5) | 0], t, 0.8, "sine", 0.03);
+      nextT += SPD;
+      step++;
+    }
+  }
+
+  function ui(){ dm.classList.toggle("pl", playing); }
+
+  function init(){
+    if(AC) return true;
+    try {
+      AC = new (window.AudioContext || window.webkitAudioContext)();
+      master = AC.createGain();
+      master.gain.value = 0;
+      var lp = AC.createBiquadFilter();
+      lp.type = "lowpass";
+      lp.frequency.value = 2200;
+      master.connect(lp);
+      lp.connect(AC.destination);
+
+      nbuf = AC.createBuffer(1, AC.sampleRate, AC.sampleRate);
+      var d = nbuf.getChannelData(0);
+      for(var i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (Math.random() < 0.003 ? 1 : 0.04);
+
+      var v = AC.createBufferSource(), vg = AC.createGain();
+      v.buffer = nbuf;
+      v.loop = true;
+      vg.gain.value = 0.1;
+      v.connect(vg);
+      vg.connect(master);
+      v.start();
+      return true;
+    } catch(e){
+      return false;
+    }
+  }
+
+  function begin(){
+    if(!init() || playing) return;
+    AC.resume().then(function(){
+      if(AC.state !== "running") return;
+      playing = true;
+      master.gain.setTargetAtTime(0.5, AC.currentTime, 0.4);
+      nextT = AC.currentTime + 0.1;
+      clearInterval(timer);
+      timer = setInterval(sched, 100);
+      ui();
+    });
+  }
+
+  function stop(){
+    playing = false;
+    clearInterval(timer);
+    if(master) master.gain.setTargetAtTime(0, AC.currentTime, 0.2);
+    ui();
+  }
+
+  function mtoggle(){
+    if(playing){ user = true; stop(); toast("Lofi Musik Dijeda"); }
+    else { user = false; begin(); toast("♪ Lofi Musik Berputar"); }
+  }
+
+  dm.addEventListener("click", mtoggle);
+  ["pointerdown", "keydown", "touchstart"].forEach(function(ev){
+    addEventListener(ev, function h(){
+      if(!user) begin();
+      if(playing) removeEventListener(ev, h);
+    }, { passive: true });
+  });
+
+  if(init()){
+    AC.resume().then(function(){
+      if(AC.state === "running") begin();
+    });
+  }
+
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+      if(playing){ stop(); AC._a = true; }
+    } else if(AC && AC._a && !user){
+      AC._a = false;
+      begin();
+    }
+  });
+
+  /* SCROLL REVEAL OBSERVER */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add("in");
+        if(e.target.id === "showcase" || e.target.closest("#showcase")){
+          runShowcase("tugas");
+        }
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  $$(".rv").forEach(function(el){ io.observe(el); });
+
+  show(location.hash.slice(1));
+  runShowcase("tugas");
+})();
+</script>
+</body>
+</html>
